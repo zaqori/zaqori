@@ -1,1 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAQORI - See Where Today's Choices Lead Tomorrow | Future Simulation Platform</title>
+    <meta name="description" content="ZAQORI is a future simulation platform that visualizes the long-term impact of your habits, decisions, and goals. Explore 20+ interactive simulators for wealth, health, learning, and more.">
+    <meta name="keywords" content="future simulator, habit tracker, goal projection, wealth simulator, fitness projection, time value">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zaqori.com/">
+    <meta property="og:title" content="ZAQORI - See Where Today's Choices Lead Tomorrow">
+    <meta property="og:description" content="Visualize the long-term impact of your habits, decisions, and goals with ZAQORI's interactive future simulators.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zaqori.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZAQORI - Future Simulation Platform">
+    <meta name="twitter:description" content="See where today's choices lead tomorrow. Interactive simulators for wealth, health, learning, and more.">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ZAQORI",
+        "description": "Future simulation platform that visualizes the long-term impact of habits, decisions, and goals.",
+        "url": "https://zaqori.com"
+    }
+    </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand">
+                <span class="brand-logo">Z</span>
+                <span>ZAQORI</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="life-simulator/index.html" class="nav-cta">✨ Life Simulator</a></li>
+                <li><a href="simulators/future-wealth-simulator.html">Simulators</a></li>
+                <li><a href="blog/">Blog</a></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">🌙</span></button>
+            </div>
+        </div>
+    </header>
 
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">🚀 Future Simulation Platform</div>
+            <h1>Your future is built by today's choices.</h1>
+            <p>ZAQORI helps you visualize the long-term impact of your habits, decisions, and goals. See exactly where your daily actions will take you in 1, 5, 10, or 30 years.</p>
+            <div class="hero-actions">
+                <a href="simulators/future-wealth-simulator.html" class="btn btn-primary btn-large">Start Simulating →</a>
+                <a href="#how-it-works" class="btn btn-ghost btn-large">How It Works</a>
+            </div>
+
+            <div class="demo-widget">
+                <h3>⚡ Try the Future Wealth Simulator</h3>
+                <form id="heroDemo" style="display:grid;gap:16px;">
+                    <div class="form-row-2">
+                        <div class="form-row">
+                            <label>Starting amount</label>
+                            <input type="number" id="demoAmount" value="1000" min="0">
+                        </div>
+                        <div class="form-row">
+                            <label>Monthly contribution</label>
+                            <input type="number" id="demoMonthly" value="200" min="0">
+                        </div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row">
+                            <label>Annual return (%)</label>
+                            <input type="number" id="demoRate" value="7" step="any">
+                        </div>
+                        <div class="form-row">
+                            <label>Years</label>
+                            <input type="number" id="demoYears" value="20" min="1" max="50">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simulate My Future →</button>
+                </form>
+                <div id="demoResult" style="margin-top:24px;display:none;">
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <div class="stat-label">Future Value</div>
+                            <div class="stat-value" id="demoFV">$0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Total Contributed</div>
+                            <div class="stat-value" id="demoContrib">$0</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Interest Gained</div>
+                            <div class="stat-value" id="demoInterest">$0</div>
+                        </div>
+                    </div>
+                    <a href="simulators/future-wealth-simulator.html" class="btn btn-secondary" style="width:100%;justify-content:center;">See Full Projection →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="popular-simulators">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Simulators</span>
+                <h2 class="section-title">Visualize every dimension of your future</h2>
+                <p class="section-subtitle">20 interactive simulators covering wealth, health, learning, productivity, and life decisions.</p>
+            </div>
+            <div class="grid grid-4">
+                <a href="simulators/future-wealth-simulator.html" class="sim-card">
+                    <span class="emoji">💰</span>
+                    <h3>Future Wealth</h3>
+                    <p>Project your total net worth over time</p>
+                </a>
+                <a href="simulators/investment-growth-simulator.html" class="sim-card">
+                    <span class="emoji">📈</span>
+                    <h3>Investment Growth</h3>
+                    <p>See compound returns on your portfolio</p>
+                </a>
+                <a href="simulators/retirement-projection-simulator.html" class="sim-card">
+                    <span class="emoji">🌴</span>
+                    <h3>Retirement</h3>
+                    <p>Plan your post-work lifestyle</p>
+                </a>
+                <a href="simulators/fitness-progress-simulator.html" class="sim-card">
+                    <span class="emoji">💪</span>
+                    <h3>Fitness Progress</h3>
+                    <p>Project your strength and body</p>
+                </a>
+                <a href="simulators/reading-progress-simulator.html" class="sim-card">
+                    <span class="emoji">📚</span>
+                    <h3>Reading Progress</h3>
+                    <p>How many books in your lifetime?</p>
+                </a>
+                <a href="simulators/habit-builder-simulator.html" class="sim-card">
+                    <span class="emoji">🎯</span>
+                    <h3>Habit Builder</h3>
+                    <p>See consistency compound over time</p>
+                </a>
+                <a href="simulators/productivity-growth-simulator.html" class="sim-card">
+                    <span class="emoji">⚡</span>
+                    <h3>Productivity</h3>
+                    <p>Model output gains from focus</p>
+                </a>
+                <a href="simulators/life-progress-timeline-simulator.html" class="sim-card">
+                    <span class="emoji">🕰️</span>
+                    <h3>Life Timeline</h3>
+                    <p>Your decade-by-decade life path</p>
+                </a>
+            </div>
+            <div style="text-align:center;margin-top:40px;">
+                <a href="#all-simulators" class="btn btn-secondary">View All 20 Simulators →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-alt" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">Three steps to see your future</h2>
+                <p class="section-subtitle">ZAQORI uses realistic mathematical models to project long-term outcomes from current behavior.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>Enter your data</h3>
+                    <p>Input your current habits, goals, income, savings rate, study time, or any metric relevant to the simulator.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>See projections</h3>
+                    <p>Get instant charts, dashboards, and timelines showing your likely outcomes at 1, 5, 10, and 30 years.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Adjust and share</h3>
+                    <p>Compare scenarios, share results, and use insights to make better choices starting today.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Benefits</span>
+                <h2 class="section-title">Why visualize your future?</h2>
+                <p class="section-subtitle">Seeing the long-term impact of small daily choices changes everything.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <span class="benefit-icon">🧠</span>
+                    <h3>Make Better Decisions</h3>
+                    <p>Numbers beat motivation. See exactly what your current path leads to.</p>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">⏳</span>
+                    <h3>Understand Time</h3>
+                    <p>Time is your most valuable asset. ZAQORI shows you what compounding really means.</p>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">📊</span>
+                    <h3>Real Projections</h3>
+                    <p>Our simulators use proven mathematical models — the same used by financial advisors.</p>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">🎯</span>
+                    <h3>Stay Focused</h3>
+                    <p>When you can see the destination, sticking to the journey becomes easier.</p>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">🔒</span>
+                    <h3>Private</h3>
+                    <p>All calculations happen in your browser. Your data never leaves your device.</p>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">🚀</span>
+                    <h3>Free Forever</h3>
+                    <p>20 simulators, 50+ articles, and growing. No paywall, no signup, no nonsense.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What people are saying</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p class="testimonial-text">"I had no idea saving $10 a day could turn into $50,000 in 20 years. ZAQORI changed how I think about every coffee."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SR</div>
+                        <div>
+                            <div class="testimonial-name">Sarah R.</div>
+                            <div class="testimonial-role">Marketing Manager</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"The Fitness Progress Simulator showed me what 30 minutes a day for 2 years would actually do. I started that day."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MK</div>
+                        <div>
+                            <div class="testimonial-name">Marcus K.</div>
+                            <div class="testimonial-role">Software Engineer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"I used the Career Growth Simulator before negotiating my raise. Got a 22% increase. Worth it for that alone."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JL</div>
+                        <div>
+                            <div class="testimonial-name">Jamie L.</div>
+                            <div class="testimonial-role">Product Designer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="all-simulators">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">All Simulators</span>
+                <h2 class="section-title">20 future simulators</h2>
+                <p class="section-subtitle">Each one designed to make the invisible impact of your choices visible.</p>
+            </div>
+            <div class="grid grid-4">
+                <a href="simulators/future-wealth-simulator.html" class="sim-card"><span class="emoji">💰</span><h3>Future Wealth Simulator</h3><p>Total net worth over time</p></a>
+                <a href="simulators/investment-growth-simulator.html" class="sim-card"><span class="emoji">📈</span><h3>Investment Growth</h3><p>Compound portfolio returns</p></a>
+                <a href="simulators/savings-growth-simulator.html" class="sim-card"><span class="emoji">🏦</span><h3>Savings Growth</h3><p>Future value of regular savings</p></a>
+                <a href="simulators/debt-payoff-simulator.html" class="sim-card"><span class="emoji">💳</span><h3>Debt Payoff</h3><p>Time to be debt-free</p></a>
+                <a href="simulators/retirement-projection-simulator.html" class="sim-card"><span class="emoji">🌴</span><h3>Retirement Projection</h3><p>Nest egg at retirement</p></a>
+                <a href="simulators/future-weight-simulator.html" class="sim-card"><span class="emoji">⚖️</span><h3>Future Weight</h3><p>Where will your weight be?</p></a>
+                <a href="simulators/fitness-progress-simulator.html" class="sim-card"><span class="emoji">💪</span><h3>Fitness Progress</h3><p>Strength & endurance gains</p></a>
+                <a href="simulators/calorie-impact-simulator.html" class="sim-card"><span class="emoji">🍎</span><h3>Calorie Impact</h3><p>Weight change from diet</p></a>
+                <a href="simulators/sleep-impact-simulator.html" class="sim-card"><span class="emoji">😴</span><h3>Sleep Impact</h3><p>Effect of sleep on health</p></a>
+                <a href="simulators/habit-builder-simulator.html" class="sim-card"><span class="emoji">🎯</span><h3>Habit Builder</h3><p>Consistency compound effect</p></a>
+                <a href="simulators/reading-progress-simulator.html" class="sim-card"><span class="emoji">📚</span><h3>Reading Progress</h3><p>Books in your lifetime</p></a>
+                <a href="simulators/study-success-simulator.html" class="sim-card"><span class="emoji">🎓</span><h3>Study Success</h3><p>Knowledge accumulation</p></a>
+                <a href="simulators/productivity-growth-simulator.html" class="sim-card"><span class="emoji">⚡</span><h3>Productivity Growth</h3><p>Career output over time</p></a>
+                <a href="simulators/social-media-cost-simulator.html" class="sim-card"><span class="emoji">📱</span><h3>Social Media Cost</h3><p>Time wasted scrolling</p></a>
+                <a href="simulators/life-progress-timeline-simulator.html" class="sim-card"><span class="emoji">🕰️</span><h3>Life Progress Timeline</h3><p>Decade-by-decade life</p></a>
+                <a href="simulators/career-growth-simulator.html" class="sim-card"><span class="emoji">💼</span><h3>Career Growth</h3><p>Earnings over your career</p></a>
+                <a href="simulators/learning-projection-simulator.html" class="sim-card"><span class="emoji">🧠</span><h3>Learning Projection</h3><p>Skills in 5 years</p></a>
+                <a href="simulators/goal-achievement-simulator.html" class="sim-card"><span class="emoji">🏆</span><h3>Goal Achievement</h3><p>Time to reach your goal</p></a>
+                <a href="simulators/time-value-simulator.html" class="sim-card"><span class="emoji">⏰</span><h3>Time Value</h3><p>What is your time worth?</p></a>
+                <a href="simulators/decision-outcome-simulator.html" class="sim-card"><span class="emoji">🎲</span><h3>Decision Outcome</h3><p>Compare two life choices</p></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">From the Blog</span>
+                <h2 class="section-title">Featured articles</h2>
+                <p class="section-subtitle">Insights, math, and stories about how today becomes tomorrow.</p>
+            </div>
+            <div class="blog-grid">
+                <a href="blog/the-hidden-cost-of-social-media.html" class="blog-card">
+                    <div class="blog-image">📱</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Habits</span>
+                        <h3>The Hidden Cost of Social Media</h3>
+                        <p>What two hours a day on your phone really costs you over a decade.</p>
+                        <div class="blog-meta">8 min read</div>
+                    </div>
+                </a>
+                <a href="blog/what-happens-if-you-save-10-dollars-every-day.html" class="blog-card">
+                    <div class="blog-image">💰</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Wealth Building</span>
+                        <h3>What Happens If You Save $10 Every Day</h3>
+                        <p>The surprising math behind small, consistent savings.</p>
+                        <div class="blog-meta">7 min read</div>
+                    </div>
+                </a>
+                <a href="blog/why-small-habits-create-massive-results.html" class="blog-card">
+                    <div class="blog-image">🌱</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Self-Improvement</span>
+                        <h3>Why Small Habits Create Massive Results</h3>
+                        <p>The compound effect applied to your daily routine.</p>
+                        <div class="blog-meta">9 min read</div>
+                    </div>
+                </a>
+                <a href="blog/the-hidden-cost-of-social-media-in-10-years.html" class="blog-card">
+                    <div class="blog-image">⏳</div>
+                    <div class="blog-content">
+                        <span class="blog-category">Habits</span>
+                        <h3>The Hidden Cost of Social Media in 10 Years</h3>
+                        <p>What 2 hours a day really costs you over a decade. The math, the health cost, the opportunity lost.</p>
+                        <div class="blog-meta">9 min read</div>
+                    </div>
+                </a>
+            </div>
+            <div style="text-align:center;margin-top:40px;">
+                <a href="blog/" class="btn btn-secondary">Read All Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Frequently asked questions</h2>
+            </div>
+            <div style="max-width:800px;margin:0 auto;">
+                <div class="faq-item"><h4>Is ZAQORI really free?</h4><p>Yes. All 20 simulators and 50+ articles are completely free. No signup, no paywall, no premium tier. We may add non-intrusive ads to support the site in the future.</p></div>
+                <div class="faq-item"><h4>How accurate are the simulations?</h4><p>Our simulators use widely accepted mathematical models (compound interest, exponential growth, calorie balance, etc.) with realistic assumptions. They are designed for planning and motivation, not as exact predictions.</p></div>
+                <div class="faq-item"><h4>Is my data private?</h4><p>Absolutely. All calculations run entirely in your browser. We don't collect, store, or transmit any personal data you enter into the simulators.</p></div>
+                <div class="faq-item"><h4>Can I share my results?</h4><p>Yes! Every simulator has a share button. You can copy a permalink to your specific results, or share via the native share dialog on mobile.</p></div>
+                <div class="faq-item"><h4>How do I get the most out of ZAQORI?</h4><p>Start with a single area you want to improve — finances, fitness, or learning. Run multiple scenarios. Then commit to one small change and revisit the simulator in a few months to see the impact.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="cta-section">
+            <h2>Ready to see your future?</h2>
+            <p>Pick a simulator, enter your numbers, and watch your tomorrow take shape — in seconds.</p>
+            <a href="simulators/future-wealth-simulator.html" class="btn btn-primary btn-large">Start Simulating Now →</a>
+        </div>
+    </div>
+
+    <!-- LIFE SIMULATOR FLAGSHIP -->
+    <section class="life-sim-cta-section">
+        <div class="container">
+            <div class="life-sim-cta-card">
+                <div class="life-sim-cta-badge">✨ NEW FLAGSHIP</div>
+                <h2 class="life-sim-cta-title">Meet the person you could become.</h2>
+                <p class="life-sim-cta-text">The most advanced life simulation experience on the internet. 60+ personal inputs. 11 cinematic phases. Your digital clone. Alternate lives. A future timeline. A conversation with your future self. A book about your life. All free, in your browser, in minutes.</p>
+                <div class="life-sim-cta-features">
+                    <div class="life-sim-cta-feature"><strong>Digital Clone</strong><span>Your personality, archetype, hidden strengths</span></div>
+                    <div class="life-sim-cta-feature"><strong>5 Alternate Lives</strong><span>What if you had chosen differently?</span></div>
+                    <div class="life-sim-cta-feature"><strong>40-Year Timeline</strong><span>Finances, career, relationships, health</span></div>
+                    <div class="life-sim-cta-feature"><strong>Talk to Future Self</strong><span>Ask anything. Get answers in character.</span></div>
+                    <div class="life-sim-cta-feature"><strong>Your Life Book</strong><span>A complete book, print-ready as PDF</span></div>
+                    <div class="life-sim-cta-feature"><strong>Parallel Universes</strong><span>You born in 1950. You born wealthy. You born an artist.</span></div>
+                </div>
+                <a href="life-simulator/index.html" class="btn btn-primary btn-large life-sim-cta-btn">Begin Your Simulation →</a>
+                <p class="life-sim-cta-note">Free. No signup. 11 phases. Cinematic. Immersive.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <a href="index.html" class="brand">
+                    <span class="brand-logo">Z</span>
+                    <span>ZAQORI</span>
+                </a>
+                <p class="footer-brand">See where today's choices lead tomorrow. Interactive simulators for wealth, health, learning, and life.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Simulators</h4>
+                <ul>
+                    <li><a href="simulators/future-wealth-simulator.html">Future Wealth</a></li>
+                    <li><a href="simulators/fitness-progress-simulator.html">Fitness Progress</a></li>
+                    <li><a href="simulators/reading-progress-simulator.html">Reading Progress</a></li>
+                    <li><a href="simulators/career-growth-simulator.html">Career Growth</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Blog</h4>
+                <ul>
+                    <li><a href="blog/the-hidden-cost-of-social-media.html">Productivity</a></li>
+                    <li><a href="blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li>
+                    <li><a href="blog/why-small-habits-create-massive-results.html">Habits</a></li>
+                    <li><a href="blog/the-mathematics-of-success.html">Self-Improvement</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="pages/about.html">About Us</a></li>
+                    <li><a href="pages/contact.html">Contact</a></li>
+                    <li><a href="pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="pages/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="categories/productivity.html">Categories</a></li>
+                    <li><a href="sitemap.xml">Sitemap</a></li>
+                    <li><a href="pages/disclaimer.html">Disclaimer</a></li>
+                </ul>
+            </div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
+    <script>
+        document.getElementById('heroDemo').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const P = parseFloat(document.getElementById('demoAmount').value) || 0;
+            const PMT = parseFloat(document.getElementById('demoMonthly').value) || 0;
+            const r = parseFloat(document.getElementById('demoRate').value) / 100;
+            const t = parseFloat(document.getElementById('demoYears').value);
+            const n = t * 12;
+            const mr = r / 12;
+            const fvP = P * Math.pow(1 + mr, n);
+            const fvC = mr === 0 ? PMT * n : PMT * (Math.pow(1+mr, n) - 1) / mr;
+            const fv = fvP + fvC;
+            const contrib = P + (PMT * n);
+            const fmt = v => '$' + Math.round(v).toLocaleString();
+            document.getElementById('demoFV').textContent = fmt(fv);
+            document.getElementById('demoContrib').textContent = fmt(contrib);
+            document.getElementById('demoInterest').textContent = fmt(fv - contrib);
+            document.getElementById('demoResult').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
