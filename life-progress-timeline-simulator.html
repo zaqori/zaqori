@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Progress Timeline Simulator - Decade by Decade | ZAQORI</title>
+    <meta name="description" content="See your life decade by decade. The Life Progress Timeline Simulator projects wealth, health, knowledge, and career across your entire life.">
+    <link rel="canonical" href="https://zaqori.com/simulators/life-progress-timeline-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>🕰️ Life Progress Timeline Simulator</h1>
+                <p class="sim-intro">See your entire life as a timeline. The Life Progress Timeline Simulator projects your wealth, knowledge, fitness, and career decade by decade — the full arc of where you're headed.</p>
+
+                <form id="ltForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Current age</label><input type="number" id="ltAge" value="25" min="10" max="80"></div>
+                        <div class="form-row"><label>Annual income (current $)</label><input type="number" id="ltInc" value="60000" min="0"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Savings rate (%)</label><input type="number" id="ltSave" value="15" min="0" max="90"></div>
+                        <div class="form-row"><label>Daily learning (minutes)</label><input type="number" id="ltLearn" value="30" min="0" max="240"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Generate My Life Timeline →</button>
+                </form>
+
+                <div class="dashboard" id="ltDash">
+                    <div class="dashboard-header">
+                        <h3>Your Life Timeline</h3>
+                        <button class="share-btn" onclick="shareResults('Life Progress Timeline Simulator', 'My life timeline on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Lifetime Earnings</div><div class="stat-value" id="ltEarn">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Lifetime Savings</div><div class="stat-value" id="ltSaveT">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Books Equivalent</div><div class="stat-value" id="ltBks">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Career Peak Age</div><div class="stat-value" id="ltPeak">—</div></div>
+                    </div>
+                    <div class="chart-container" id="ltChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Decade Markers</div><div class="timeline-items" id="ltTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Life Progress Timeline Simulator?</h2>
+                    <p>The Life Progress Timeline Simulator is the broadest view ZAQORI offers. Rather than focusing on one dimension, it models your entire life trajectory across wealth, knowledge, career, and personal development. The output is a decade-by-decade timeline that shows where each area of your life is headed if current patterns continue.</p>
+                    <p>It's a powerful tool for mid-course corrections. Most people optimize locally — for this month's bills, this year's goals — without considering the long arc. The simulator makes the arc visible.</p>
+
+                    <h3>Modeling the Full Life</h3>
+                    <p>The simulator combines several sub-models: career earnings growth, savings accumulation, learning rate, and skill development. Each follows its own curve, but together they describe the integrated picture of a life.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your current age and current annual income.</li>
+                        <li>Set your savings rate and daily learning minutes.</li>
+                        <li>Click "Generate My Life Timeline" to see your decade-by-decade projections.</li>
+                        <li>Use the chart and timeline to identify your most leveraged next decade.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Your Life Timeline</h2>
+                    <p>The decade view is uniquely clarifying. A problem that feels urgent ("I'm behind on retirement") becomes proportionate when you see you have 30+ years ahead. An opportunity that feels distant ("I should learn a new skill") becomes real when you see how much cumulative knowledge 5-10 years of practice produces.</p>
+                    <p>It also helps you see that the most leveraged decade is often the next one. A 30-year-old who invests 5 years in a new skill or business has 30+ years to benefit. The same investment at 55 has much less runway.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>How is career growth modeled?</h4><p>The simulator assumes real wage growth of 1-3% annually plus promotion-related jumps. Switching careers resets the curve but offers new upside.</p></div>
+                    <div class="faq-item"><h4>What about life events?</h4><p>The simulator doesn't model marriage, kids, divorce, illness, or other major life events. These obviously affect outcomes. Use the projection as a baseline; real life will deviate.</p></div>
+                    <div class="faq-item"><h4>Can I change assumptions over time?</h4><p>Yes. Run the simulator with different savings rates, learning minutes, or income scenarios to see how each change affects the timeline.</p></div>
+                    <div class="faq-item"><h4>What if I'm already 50?</h4><p>The simulator still works. The 50s and 60s often turn out to be highly leveraged decades — peak earnings, peak savings capacity, and high clarity about what matters.</p></div>
+                    <div class="faq-item"><h4>How do I act on this?</h4><p>Identify the largest gap between your current trajectory and where you want to be. Pick the single highest-leverage change. Re-run the simulator in 1-2 years to see the new trajectory.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="future-wealth-simulator.html">Future Wealth Simulator</a> — total net worth picture.</li>
+                        <li><a href="career-growth-simulator.html">Career Growth Simulator</a> — earnings over career.</li>
+                        <li><a href="retirement-projection-simulator.html">Retirement Projection Simulator</a> — long-term planning.</li>
+                        <li><a href="decision-outcome-simulator.html">Decision Outcome Simulator</a> — compare two life paths.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Life Simulators</h3><ul class="sidebar-list">
+                    <li><a href="life-progress-timeline-simulator.html">Life Timeline</a></li>
+                    <li><a href="career-growth-simulator.html">Career Growth</a></li>
+                    <li><a href="decision-outcome-simulator.html">Decision Outcome</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('ltForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const age = +document.getElementById('ltAge').value;
+            const inc = +document.getElementById('ltInc').value;
+            const save = +document.getElementById('ltSave').value / 100;
+            const learn = +document.getElementById('ltLearn').value;
+            const years = Math.max(0, 80 - age);
+            let totalEarn = 0, totalSave = 0, bal = 0;
+            const data = [];
+            for (let y = 0; y <= years; y++) {
+                data.push({ label: 'Age ' + (age + y), value: Math.round(bal) });
+                if (y < years) {
+                    const yrInc = inc * Math.pow(1.03, y);
+                    totalEarn += yrInc;
+                    const yrSave = yrInc * save * 0.7;
+                    totalSave += yrSave;
+                    bal = bal * 1.07 + yrSave;
+                }
+            }
+            const books = Math.floor(learn * 365 * years / 30);
+            const peak = age + Math.min(20, Math.floor(years * 0.5));
+            const fmt = v => '$' + Math.round(v).toLocaleString();
+            document.getElementById('ltEarn').textContent = fmt(totalEarn);
+            document.getElementById('ltSaveT').textContent = fmt(totalSave);
+            document.getElementById('ltBks').textContent = books.toLocaleString();
+            document.getElementById('ltPeak').textContent = peak;
+            QAQCharts.lineChart(document.getElementById('ltChart'), data, { format: 'currency', height: 320 });
+            const decades = [];
+            for (let d = 1; d <= Math.floor(years/10); d++) {
+                const ageAt = age + d*10;
+                const idx = Math.min(d*10, data.length-1);
+                decades.push('<div class="timeline-item"><div class="timeline-year">' + ageAt + '</div><div class="timeline-text">Net worth: ' + fmt(data[idx].value) + '</div></div>');
+            }
+            document.getElementById('ltTimeline').innerHTML = decades.join('');
+            document.getElementById('ltDash').classList.add('show');
+            document.getElementById('ltDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="60" y="100" font-family="-apple-system, system-ui, sans-serif" font-size="42" font-weight="700" fill="white">The 8th wonder of the world</text>
+  <text x="60" y="145" font-family="-apple-system, system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.85)">Compound interest: interest earning interest</text>
+
+  <!-- Big exponential curve -->
+  <path d="M 100,500 Q 200,498 350,495 Q 500,490 600,470 Q 700,440 800,370 Q 900,280 1000,170 Q 1050,110 1100,80"
+        stroke="white" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <!-- Simple interest comparison -->
+  <path d="M 100,500 L 1100,350" stroke="rgba(255,255,255,0.4)" stroke-width="3" fill="none" stroke-dasharray="8,4"/>
+
+  <!-- Compounding dots -->
+  <g fill="#fbbf24">
+    <circle cx="200" cy="498" r="6"/>
+    <circle cx="350" cy="495" r="8"/>
+    <circle cx="500" cy="490" r="10"/>
+    <circle cx="650" cy="455" r="12"/>
+    <circle cx="800" cy="370" r="14"/>
+    <circle cx="950" cy="220" r="16"/>
+    <circle cx="1100" cy="80" r="20"/>
+  </g>
+
+  <!-- Year markers -->
+  <g font-family="-apple-system, system-ui, sans-serif" fill="rgba(255,255,255,0.85)">
+    <text x="200" y="540" font-size="14" text-anchor="middle">Year 1</text>
+    <text x="500" y="540" font-size="14" text-anchor="middle">Year 10</text>
+    <text x="800" y="540" font-size="14" text-anchor="middle">Year 20</text>
+    <text x="1100" y="540" font-size="14" text-anchor="middle">Year 30</text>
+  </g>
+
+  <!-- Final amount -->
+  <text x="1080" y="65" font-family="-apple-system, system-ui, sans-serif" font-size="24" font-weight="700" text-anchor="end" fill="white">$7,612</text>
+  <text x="1080" y="85" font-family="-apple-system, system-ui, sans-serif" font-size="12" text-anchor="end" fill="rgba(255,255,255,0.7)">from $1,000</text>
+
+  <!-- Formula -->
+  <text x="60" y="200" font-family="ui-monospace, monospace" font-size="20" fill="rgba(255,255,255,0.95)">P × (1 + r)^t</text>
+  <text x="60" y="225" font-family="-apple-system, system-ui, sans-serif" font-size="14" fill="rgba(255,255,255,0.7)">the formula that builds empires</text>
+
+  <text x="60" y="580" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="600" fill="rgba(255,255,255,0.95)">ZAQORI</text>
+  <text x="60" y="610" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)">See what today's choices mean in 10 years</text>
+</svg>

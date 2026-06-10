@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Growth Simulator - Compound Returns | ZAQORI</title>
+    <meta name="description" content="See how your investments grow with compound returns. Project portfolio value with monthly contributions, dividend reinvestment, and market volatility assumptions.">
+    <link rel="canonical" href="https://zaqori.com/simulators/investment-growth-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>📈 Investment Growth Simulator</h1>
+                <p class="sim-intro">See exactly what your investment portfolio becomes over time. Account for compound growth, regular contributions, and the impact of market volatility on your long-term returns.</p>
+
+                <form id="invForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Initial investment ($)</label><input type="number" id="iInit" value="10000" min="0"></div>
+                        <div class="form-row"><label>Monthly contribution ($)</label><input type="number" id="iMonth" value="500" min="0"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Expected annual return (%)</label><input type="number" id="iRet" value="8" step="any"></div>
+                        <div class="form-row"><label>Annual volatility (%)</label><input type="number" id="iVol" value="15" step="any"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Dividend yield (%)</label><input type="number" id="iDiv" value="2" step="any"></div>
+                        <div class="form-row"><label>Time horizon (years)</label><input type="number" id="iYears" value="20" min="1" max="50"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Run Simulation →</button>
+                </form>
+
+                <div class="dashboard" id="invDash">
+                    <div class="dashboard-header">
+                        <h3>Investment Growth Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Investment Growth Simulator', 'My investment projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Final Value</div><div class="stat-value" id="iFinal">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Total Invested</div><div class="stat-value" id="iInvested">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Compound Growth</div><div class="stat-value" id="iGrowth">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">CAGR Achieved</div><div class="stat-value" id="iCAGR">0%</div></div>
+                    </div>
+                    <div class="chart-container" id="iChart"></div>
+                    <div class="timeline">
+                        <div class="timeline-title">📊 Year-by-Year Milestones</div>
+                        <div class="timeline-items" id="iTimeline"></div>
+                    </div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Investment Growth Simulator?</h2>
+                    <p>The Investment Growth Simulator is built to answer one powerful question: "What will my portfolio actually be worth in 20 years?" Most people have a rough sense that "compound interest is powerful" but no concrete picture of the dollar value. This simulator turns that abstract idea into a vivid, personalized projection.</p>
+                    <p>Unlike a simple compound interest calculator, this tool layers in realistic investment features: expected returns adjusted for volatility, dividend reinvestment, and time horizon effects. The result is a much more honest projection of what stock market investing actually delivers.</p>
+
+                    <h3>The Math Behind It</h3>
+                    <p>The core formula uses the future value of an annuity with compound growth:</p>
+                    <div class="formula-box">FV = P × (1 + r)^t + PMT × [((1 + r)^t − 1) / r]</div>
+                    <p>Where P is the initial investment, r is the periodic (monthly) return, t is the number of periods, and PMT is the monthly contribution. We layer in dividend yield as additional compounding, and apply a "volatility haircut" that reduces the effective return slightly to account for sequence-of-returns risk and behavioral drag.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your initial investment amount and how much you'll add each month.</li>
+                        <li>Set your expected return. Stocks have historically returned 7–10% nominal; bonds 3–5%.</li>
+                        <li>Add volatility (the standard deviation of returns) to model real-world risk.</li>
+                        <li>Include dividend yield if your investments pay distributions (S&P 500 averages ~2%).</li>
+                        <li>Set your time horizon and click "Run Simulation" to see the full projection.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Investment Growth</h2>
+                    <p>Numbers on a page become real when you see them on a chart. A projection showing $400,000 in 20 years hits different from a vague idea that "I should invest more." It also shows the cost of waiting: starting at 25 versus 35 typically doubles the end result, even with the same monthly contribution.</p>
+                    <p>The simulator also helps with realistic expectations. By factoring in volatility and dividends, you get a more honest projection than the rosy "10% annual return" sales pitch. Use it to stress-test your retirement plan or to set specific dollar-amount goals.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>What return should I use for stocks?</h4><p>Historical S&P 500 nominal return is ~10%. After inflation, real return is ~7%. For a 20+ year horizon, 7–8% is a reasonable expected return, and accounts for the volatility haircut.</p></div>
+                    <div class="faq-item"><h4>Does volatility reduce my expected return?</h4><p>Volatility itself doesn't reduce geometric average return in a random-walk model, but it creates sequence-of-returns risk — withdrawing during a bad year hurts much more than withdrawing during a good one. For accumulation, volatility matters less.</p></div>
+                    <div class="faq-item"><h4>Should I include dividends?</h4><p>Yes. Dividend reinvestment is a significant contributor to long-term total return. The S&P 500's ~2% dividend yield compounds meaningfully over decades.</p></div>
+                    <div class="faq-item"><h4>What about taxes?</h4><p>This is a pre-tax projection. In a taxable account, drag from capital gains and dividend taxes can reduce returns 0.5–1.5% annually. Tax-advantaged accounts (401k, IRA) avoid most of this.</p></div>
+                    <div class="faq-item"><h4>Can I model bear markets?</h4><p>The simulator uses expected returns averaged over time. A real 20-year period will include 2–3 major bear markets. The long-term average smooths these out, but be prepared for year-to-year volatility of ±15%.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="future-wealth-simulator.html">Future Wealth Simulator</a> — total net worth picture.</li>
+                        <li><a href="savings-growth-simulator.html">Savings Growth Simulator</a> — for guaranteed-rate accounts.</li>
+                        <li><a href="retirement-projection-simulator.html">Retirement Projection Simulator</a> — long-term nest egg planning.</li>
+                        <li><a href="time-value-simulator.html">Time Value Simulator</a> — see what your time is worth.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Finance Simulators</h3><ul class="sidebar-list">
+                    <li><a href="future-wealth-simulator.html">Future Wealth</a></li>
+                    <li><a href="investment-growth-simulator.html">Investment Growth</a></li>
+                    <li><a href="savings-growth-simulator.html">Savings Growth</a></li>
+                    <li><a href="debt-payoff-simulator.html">Debt Payoff</a></li>
+                    <li><a href="retirement-projection-simulator.html">Retirement</a></li>
+                </ul></div>
+                <div class="sidebar-box"><h3>Life Simulators</h3><ul class="sidebar-list">
+                    <li><a href="career-growth-simulator.html">Career Growth</a></li>
+                    <li><a href="time-value-simulator.html">Time Value</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('invForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const P = +document.getElementById('iInit').value;
+            const PMT = +document.getElementById('iMonth').value;
+            const ret = +document.getElementById('iRet').value / 100;
+            const vol = +document.getElementById('iVol').value / 100;
+            const div = +document.getElementById('iDiv').value / 100;
+            const years = +document.getElementById('iYears').value;
+            const effectiveRet = ret - (vol * vol) / 2;
+            const totalRet = effectiveRet + div;
+            const data = [];
+            let bal = P;
+            for (let y = 0; y <= years; y++) {
+                data.push({ label: 'Y' + y, value: Math.round(bal) });
+                if (y === years) break;
+                for (let m = 0; m < 12; m++) bal = bal * (1 + totalRet/12) + PMT;
+            }
+            const final = bal;
+            const totalInv = P + (PMT * 12 * years);
+            const cagr = (Math.pow(final / Math.max(P, 1), 1/years) - 1) * 100;
+            const fmt = v => '$' + Math.round(v).toLocaleString();
+            document.getElementById('iFinal').textContent = fmt(final);
+            document.getElementById('iInvested').textContent = fmt(totalInv);
+            document.getElementById('iGrowth').textContent = fmt(final - totalInv);
+            document.getElementById('iCAGR').textContent = cagr.toFixed(1) + '%';
+            QAQCharts.lineChart(document.getElementById('iChart'), data, { format: 'currency', height: 320 });
+            const milestones = [5, 10, 15, 20, 25, 30].filter(y => y <= years);
+            const tlHtml = milestones.map(y => '<div class="timeline-item"><div class="timeline-year">Y' + y + '</div><div class="timeline-text">' + fmt(data[y].value) + '</div></div>').join('');
+            document.getElementById('iTimeline').innerHTML = tlHtml;
+            document.getElementById('invDash').classList.add('show');
+            document.getElementById('invDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Growth Simulator - Future Value of Savings | ZAQORI</title>
+    <meta name="description" content="See how your savings account balance grows over time. The Savings Growth Simulator projects future value with compound interest and regular deposits.">
+    <link rel="canonical" href="https://zaqori.com/simulators/savings-growth-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>🏦 Savings Growth Simulator</h1>
+                <p class="sim-intro">Watch your savings account balance grow month by month. Perfect for high-yield savings, CDs, money market accounts, and any fixed-rate savings vehicle.</p>
+
+                <form id="savForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Starting balance ($)</label><input type="number" id="sInit" value="5000" min="0"></div>
+                        <div class="form-row"><label>Monthly deposit ($)</label><input type="number" id="sMonth" value="300" min="0"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Annual interest rate (APY %)</label><input type="number" id="sRate" value="4.5" step="any"></div>
+                        <div class="form-row"><label>Compounding frequency</label>
+                            <select id="sFreq">
+                                <option value="12" selected>Monthly</option>
+                                <option value="365">Daily</option>
+                                <option value="4">Quarterly</option>
+                                <option value="1">Annually</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row"><label>Time horizon (years)</label><input type="number" id="sYears" value="10" min="1" max="50"></div>
+                    <button type="submit" class="btn btn-primary btn-large">Project My Savings →</button>
+                </form>
+
+                <div class="dashboard" id="savDash">
+                    <div class="dashboard-header">
+                        <h3>Savings Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Savings Growth Simulator', 'Check out my savings projection!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Final Balance</div><div class="stat-value" id="sFinal">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Total Deposits</div><div class="stat-value" id="sDeposits">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Interest Earned</div><div class="stat-value" id="sInterest">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Effective Yield</div><div class="stat-value" id="sYield">0%</div></div>
+                    </div>
+                    <div class="chart-container" id="sChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Year Markers</div><div class="timeline-items" id="sTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Savings Growth Simulator?</h2>
+                    <p>The Savings Growth Simulator projects the future value of money held in a savings account, certificate of deposit, or any other fixed-rate, low-risk vehicle. Unlike investment accounts, savings accounts have predictable, guaranteed returns — making them ideal for emergency funds, short-term goals, and capital preservation.</p>
+                    <p>This tool helps you answer practical questions: How fast will my emergency fund grow? How much will I have in 3 years if I save $200 a month? Should I choose a 12-month CD or a high-yield savings account?</p>
+
+                    <h3>How Compound Interest Works in Savings</h3>
+                    <p>The formula for compound interest in savings is:</p>
+                    <div class="formula-box">FV = P × (1 + r/n)^(n×t) + PMT × [((1 + r/n)^(n×t) − 1) / (r/n)]</div>
+                    <p>Where P is the initial deposit, r is the annual rate (APY), n is the compounding frequency per year, t is years, and PMT is the regular contribution. More frequent compounding (daily vs annually) produces slightly more interest, though for typical rates the difference is small.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your current savings balance and the amount you plan to deposit each month.</li>
+                        <li>Set the APY offered by your bank (high-yield savings currently offer 4–5%).</li>
+                        <li>Choose your compounding frequency. Most savings accounts compound daily or monthly.</li>
+                        <li>Set your time horizon and click "Project My Savings" to see the full growth curve.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Savings Growth</h2>
+                    <p>Savings accounts feel "boring" because their returns are modest — until you project them out 5, 10, or 20 years. A chart showing $50,000 from consistent $200 monthly deposits is a much more powerful motivator than a balance statement showing $300 of monthly interest.</p>
+                    <p>The simulator also helps you compare vehicles. A 5% APY high-yield account vs. a 4% money market may not seem different month-to-month, but over 10 years the difference is thousands of dollars. Run the comparison.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>What is APY vs APR?</h4><p>APY (Annual Percentage Yield) includes the effect of compounding. APR (Annual Percentage Rate) does not. For savings, APY is the relevant number because it shows what you actually earn.</p></div>
+                    <div class="faq-item"><h4>How often do savings accounts compound?</h4><p>Most high-yield online savings accounts compound daily and pay interest monthly. Traditional brick-and-mortar banks often compound monthly. The difference is small for typical balances.</p></div>
+                    <div class="faq-item"><h4>Is my savings safe?</h4><p>In the US, FDIC-insured bank accounts are protected up to $250,000 per depositor per bank. Credit unions have similar NCUSIF coverage. Money outside insured deposits is not protected.</p></div>
+                    <div class="faq-item"><h4>Should I ladder my CDs?</h4><p>CD laddering is a strategy where you stagger CDs of different maturities. It provides regular access to funds while capturing higher long-term rates. Use this simulator to model each rung.</p></div>
+                    <div class="faq-item"><h4>What about inflation?</h4><p>This is a nominal projection. With 2.5% inflation, a 4.5% APY yields only ~2% real return. For long-term goals, consider supplementing savings with investments that have higher real returns.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="future-wealth-simulator.html">Future Wealth Simulator</a> — total picture including investments.</li>
+                        <li><a href="investment-growth-simulator.html">Investment Growth Simulator</a> — for market-based returns.</li>
+                        <li><a href="retirement-projection-simulator.html">Retirement Projection Simulator</a> — long-term planning.</li>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — build the saving habit.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Finance Simulators</h3><ul class="sidebar-list">
+                    <li><a href="future-wealth-simulator.html">Future Wealth</a></li>
+                    <li><a href="savings-growth-simulator.html">Savings Growth</a></li>
+                    <li><a href="investment-growth-simulator.html">Investment Growth</a></li>
+                    <li><a href="debt-payoff-simulator.html">Debt Payoff</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('savForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const P = +document.getElementById('sInit').value;
+            const PMT = +document.getElementById('sMonth').value;
+            const r = +document.getElementById('sRate').value / 100;
+            const n = +document.getElementById('sFreq').value;
+            const years = +document.getElementById('sYears').value;
+            const data = [];
+            let bal = P;
+            const periodsPerYear = n;
+            const ratePer = r / n;
+            const monthlyEquivalent = PMT;
+            for (let y = 0; y <= years; y++) {
+                data.push({ label: 'Y' + y, value: Math.round(bal) });
+                if (y === years) break;
+                for (let p = 0; p < periodsPerYear; p++) {
+                    bal = bal * (1 + ratePer);
+                    if (n === 12) bal += monthlyEquivalent;
+                }
+                if (n === 365) bal += (monthlyEquivalent * 12);
+                if (n === 4) bal += (monthlyEquivalent * 3);
+                if (n === 1) bal += (monthlyEquivalent * 12);
+            }
+            const final = bal;
+            const totalDep = P + (PMT * 12 * years);
+            const interest = final - totalDep;
+            const effYield = (Math.pow(final/Math.max(P,1), 1/years) - 1) * 100;
+            const fmt = v => '$' + Math.round(v).toLocaleString();
+            document.getElementById('sFinal').textContent = fmt(final);
+            document.getElementById('sDeposits').textContent = fmt(totalDep);
+            document.getElementById('sInterest').textContent = fmt(interest);
+            document.getElementById('sYield').textContent = effYield.toFixed(2) + '%';
+            QAQCharts.lineChart(document.getElementById('sChart'), data, { format: 'currency', height: 320 });
+            const milestones = [];
+            for (let y = 1; y <= years; y++) if (y % Math.max(1, Math.floor(years/8)) === 0 || y === years) milestones.push(y);
+            const tlHtml = milestones.map(y => '<div class="timeline-item"><div class="timeline-year">Y' + y + '</div><div class="timeline-text">' + fmt(data[y].value) + '</div></div>').join('');
+            document.getElementById('sTimeline').innerHTML = tlHtml;
+            document.getElementById('savDash').classList.add('show');
+            document.getElementById('savDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

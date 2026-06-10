@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Projection Simulator - Plan Your Future | ZAQORI</title>
+    <meta name="description" content="Project your retirement nest egg and monthly income. The Retirement Projection Simulator shows if you're on track with detailed timelines.">
+    <link rel="canonical" href="https://zaqori.com/simulators/retirement-projection-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>🌴 Retirement Projection Simulator</h1>
+                <p class="sim-intro">Will your savings last through retirement? See your projected nest egg, monthly income, and whether you're on track for the retirement you envision.</p>
+
+                <form id="retForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Current age</label><input type="number" id="rAge" value="32" min="18" max="80"></div>
+                        <div class="form-row"><label>Target retirement age</label><input type="number" id="rRetAge" value="65" min="40" max="90"></div>
+                    </div>
+                    <div class="form-row"><label>Current retirement savings ($)</label><input type="number" id="rCur" value="50000" min="0"></div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Monthly contribution ($)</label><input type="number" id="rMon" value="800" min="0"></div>
+                        <div class="form-row"><label>Employer match ($/year)</label><input type="number" id="rMatch" value="3000" min="0"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Expected return (%)</label><input type="number" id="rRet" value="7" step="any"></div>
+                        <div class="form-row"><label>Inflation rate (%)</label><input type="number" id="rInf" value="2.5" step="any"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Years in retirement</label><input type="number" id="rYears" value="25" min="1" max="60"></div>
+                        <div class="form-row"><label>Safe withdrawal rate (%)</label><input type="number" id="rSwr" value="4" step="any"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Project My Retirement →</button>
+                </form>
+
+                <div class="dashboard" id="retDash">
+                    <div class="dashboard-header">
+                        <h3>Retirement Projection</h3>
+                        <button class="share-btn" onclick="shareResults('Retirement Projection Simulator', 'My retirement projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Nest Egg at Retirement</div><div class="stat-value" id="reEgg">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Monthly Income (4% rule)</div><div class="stat-value" id="reIncome">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">In Today's Dollars</div><div class="stat-value" id="reReal">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Years to Retirement</div><div class="stat-value" id="reYears">0</div></div>
+                    </div>
+                    <div class="chart-container" id="reChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Life Milestones</div><div class="timeline-items" id="reTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Retirement Projection Simulator?</h2>
+                    <p>The Retirement Projection Simulator models your financial future from now until well into retirement. It answers the most important personal finance question most people have: "Am I on track?" The answer comes with a concrete number, a chart of your projected balance, and a breakdown of what your monthly income will look like.</p>
+                    <p>Unlike a simple nest-egg calculator, this tool models both the accumulation phase and the decumulation phase. It factors in employer matches, inflation, a safe withdrawal rate, and how long your money needs to last. The output is a complete picture of your retirement journey.</p>
+
+                    <h3>The 4% Rule and Why It Matters</h3>
+                    <p>The 4% rule, based on the Trinity Study, says you can withdraw 4% of your starting balance in year one of retirement, then adjust that dollar amount for inflation each year, with a high probability of not running out of money over a 30-year retirement. It's the basis for our default safe withdrawal rate, and gives you a realistic monthly income estimate.</p>
+                    <div class="formula-box">Annual Income = Nest Egg × Safe Withdrawal Rate</div>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your current age and the age you plan to retire.</li>
+                        <li>Add your current retirement savings and monthly contribution.</li>
+                        <li>Include any employer match and your expected annual return on investments.</li>
+                        <li>Set inflation and safe withdrawal rate assumptions (defaults are reasonable).</li>
+                        <li>Click "Project My Retirement" to see your nest egg, monthly income, and timeline.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Your Retirement</h2>
+                    <p>Retirement is a long-term goal that can feel abstract. Seeing $1.4M projected at age 65 changes the conversation from "I should probably save more" to "I need $400 more per month to hit my target." The simulator makes the math real and gives you specific levers to pull.</p>
+                    <p>Run multiple scenarios: What if I work 2 more years? What if I increase my 401(k) by 2%? What if I retire at 60 instead of 65? The differences are concrete, not vague.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>How much do I need to retire?</h4><p>A common rule is 25× your annual expenses (the inverse of the 4% rule). If you spend $50,000 a year, you need about $1.25M. The simulator gives you a precise number based on your inputs.</p></div>
+                    <div class="faq-item"><h4>What return should I assume?</h4><p>For a diversified stock portfolio, 7% nominal (5% real) is a reasonable long-term assumption. Be conservative — under-promising beats over-promising. Adjust based on your asset mix.</p></div>
+                    <div class="faq-item"><h4>Does this include Social Security?</h4><p>Not directly. Add the expected monthly benefit to your projected retirement income to see the total. Estimate yours at ssa.gov.</p></div>
+                    <div class="faq-item"><h4>What if I retire early?</h4><p>Early retirement means fewer contribution years and more withdrawal years. The simulator handles this — extend the "years in retirement" field and consider a 3% withdrawal rate (more conservative).</p></div>
+                    <div class="faq-item"><h4>Are taxes included?</h4><p>This is pre-tax. Roth accounts are tax-free in retirement. Traditional 401(k)/IRA withdrawals are taxed as ordinary income. Effective tax rate of 15–22% in retirement is a reasonable assumption.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="future-wealth-simulator.html">Future Wealth Simulator</a> — total net worth picture.</li>
+                        <li><a href="investment-growth-simulator.html">Investment Growth Simulator</a> — model individual investments.</li>
+                        <li><a href="savings-growth-simulator.html">Savings Growth Simulator</a> — for guaranteed-rate savings.</li>
+                        <li><a href="life-progress-timeline-simulator.html">Life Progress Timeline</a> — see your whole life arc.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Finance Simulators</h3><ul class="sidebar-list">
+                    <li><a href="future-wealth-simulator.html">Future Wealth</a></li>
+                    <li><a href="retirement-projection-simulator.html">Retirement</a></li>
+                    <li><a href="investment-growth-simulator.html">Investment Growth</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('retForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const age = +document.getElementById('rAge').value;
+            const retAge = +document.getElementById('rRetAge').value;
+            const cur = +document.getElementById('rCur').value;
+            const mon = +document.getElementById('rMon').value;
+            const match = +document.getElementById('rMatch').value;
+            const r = +document.getElementById('rRet').value / 100;
+            const inf = +document.getElementById('rInf').value / 100;
+            const years = +document.getElementById('rYears').value;
+            const swr = +document.getElementById('rSwr').value / 100;
+            const t = retAge - age;
+            if (t <= 0) { alert('Retirement age must be greater than current age.'); return; }
+            const data = [];
+            let bal = cur;
+            const annualContrib = (mon * 12) + match;
+            for (let y = 0; y <= t; y++) {
+                data.push({ label: 'Age ' + (age + y), value: Math.round(bal) });
+                if (y < t) for (let m = 0; m < 12; m++) bal = bal * (1 + r/12) + mon;
+                bal += match;
+            }
+            const nestEgg = bal;
+            const monthlyIncome = (nestEgg * swr) / 12;
+            const realValue = nestEgg / Math.pow(1 + inf, t);
+            const fmt = v => '$' + Math.round(v).toLocaleString();
+            document.getElementById('reEgg').textContent = fmt(nestEgg);
+            document.getElementById('reIncome').textContent = fmt(monthlyIncome);
+            document.getElementById('reReal').textContent = fmt(realValue);
+            document.getElementById('reYears').textContent = t;
+            QAQCharts.lineChart(document.getElementById('reChart'), data, { format: 'currency', height: 320 });
+            const tlHtml = '<div class="timeline-item"><div class="timeline-year">Now</div><div class="timeline-text">Age ' + age + ': ' + fmt(cur) + '</div></div>' +
+            '<div class="timeline-item"><div class="timeline-year">+10y</div><div class="timeline-text">Age ' + (age+10) + ': ' + fmt(data[Math.min(10, data.length-1)].value) + '</div></div>' +
+            '<div class="timeline-item"><div class="timeline-year">+20y</div><div class="timeline-text">Age ' + (age+20) + ': ' + fmt(data[Math.min(20, data.length-1)].value) + '</div></div>' +
+            '<div class="timeline-item" style="border-left-color:var(--success);"><div class="timeline-year">' + retAge + '</div><div class="timeline-text">Retire with ' + fmt(nestEgg) + ' → ' + fmt(monthlyIncome) + '/mo income</div></div>';
+            document.getElementById('reTimeline').innerHTML = tlHtml;
+            document.getElementById('retDash').classList.add('show');
+            document.getElementById('retDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Outcome Simulator - Compare Life Choices | ZAQORI</title>
+    <meta name="description" content="Compare two life decisions side by side. The Decision Outcome Simulator models the financial, time, and personal impact of major choices.">
+    <link rel="canonical" href="https://zaqori.com/simulators/decision-outcome-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>🎲 Decision Outcome Simulator</h1>
+                <p class="sim-intro">Big decisions deserve careful thought. The Decision Outcome Simulator compares two life choices side by side — finances, time, opportunities, and lifestyle impact over 5, 10, or 20 years.</p>
+
+                <form id="doForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Option A name</label><input type="text" id="doAname" value="Stay in current job"></div>
+                        <div class="form-row"><label>Option B name</label><input type="text" id="doBname" value="Take new opportunity"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Option A annual income ($)</label><input type="number" id="doAinc" value="70000" min="0"></div>
+                        <div class="form-row"><label>Option B annual income ($)</label><input type="number" id="doBinc" value="85000" min="0"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Option A fulfillment (1-10)</label><input type="number" id="doAful" value="6" min="1" max="10"></div>
+                        <div class="form-row"><label>Option B fulfillment (1-10)</label><input type="number" id="doBful" value="8" min="1" max="10"></div>
+                    </div>
+                    <div class="form-row"><label>Years to compare</label><input type="number" id="doYears" value="10" min="1" max="30"></div>
+                    <button type="submit" class="btn btn-primary btn-large">Compare Outcomes →</button>
+                </form>
+
+                <div class="dashboard" id="doDash">
+                    <div class="dashboard-header">
+                        <h3>Side-by-Side Comparison</h3>
+                        <button class="share-btn" onclick="shareResults('Decision Outcome Simulator', 'My decision comparison on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">A: Lifetime Income</div><div class="stat-value" id="doAli">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">B: Lifetime Income</div><div class="stat-value" id="doBli">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Income Difference</div><div class="stat-value" id="doDiff">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Fulfillment Score</div><div class="stat-value" id="doScore">A: 0 | B: 0</div></div>
+                    </div>
+                    <div class="chart-container" id="doChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Outcome Markers</div><div class="timeline-items" id="doTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Decision Outcome Simulator?</h2>
+                    <p>The Decision Outcome Simulator helps you compare two life choices side by side. Big decisions — job changes, relocations, going back to school, starting a business — have financial, time, and personal impact that compounds over years. This tool models the comparison in concrete terms.</p>
+                    <p>It's not a magic answer. The goal is to surface the trade-offs that are easy to ignore when deciding in the moment. By projecting the cumulative impact, you can make a more informed choice.</p>
+
+                    <h3>Decision Math</h3>
+                    <p>The simulator computes lifetime income, fulfillment score, and time investment for each option. The comparison is then a side-by-side view, not a recommendation.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Name your two options clearly (e.g., "Stay in current job" vs. "Take new role").</li>
+                        <li>Enter the expected income for each option.</li>
+                        <li>Rate fulfillment honestly on a 1-10 scale — this captures non-monetary value.</li>
+                        <li>Choose the time horizon (typically 5-10 years for career decisions).</li>
+                        <li>Click "Compare Outcomes" to see the side-by-side analysis.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Decisions</h2>
+                    <p>Most decisions are made emotionally in the moment, with the long-term consequences only becoming clear years later. The simulator forces you to estimate those long-term consequences upfront. Often, the choice becomes much clearer once the cumulative impact is visible.</p>
+                    <p>It also surfaces hidden costs. A higher-paying job that requires 60-hour weeks may look attractive in the moment, but the time cost shows up in the comparison. A lower-paying but more fulfilling role might score higher on overall life satisfaction.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>How do I rate fulfillment?</h4><p>Be honest. Fulfillment is a measure of how much the work itself, the environment, and the lifestyle align with what you value. 1-3 = draining, 4-6 = okay, 7-9 = good, 10 = dream role.</p></div>
+                    <div class="faq-item"><h4>What if the income is uncertain?</h4><p>Use a 3-year average. The simulator assumes steady income, so use your best long-term estimate.</p></div>
+                    <div class="faq-item"><h4>What about opportunity cost?</h4><p>The simulator shows you the difference. If option B earns $15k more per year for 10 years, that's $150k of additional lifetime income — but option A might have other benefits the simulator doesn't capture.</p></div>
+                    <div class="faq-item"><h4>What if both options have downsides?</h4><p>Most real decisions are trade-offs. The simulator helps you see which trade-off you can live with. There's rarely a "right" answer; there's a "right for you" answer.</p></div>
+                    <div class="faq-item"><h4>What about non-financial factors?</h4><p>The fulfillment score captures the most important non-financial factor. Other factors (location, family, health) often matter most but are harder to quantify. Use the simulator as one input among many.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="career-growth-simulator.html">Career Growth Simulator</a> — single career path detail.</li>
+                        <li><a href="future-wealth-simulator.html">Future Wealth Simulator</a> — total wealth picture.</li>
+                        <li><a href="time-value-simulator.html">Time Value Simulator</a> — quantify time trade-offs.</li>
+                        <li><a href="life-progress-timeline-simulator.html">Life Progress Timeline</a> — full life view.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Decision Tools</h3><ul class="sidebar-list">
+                    <li><a href="decision-outcome-simulator.html">Decision Outcome</a></li>
+                    <li><a href="time-value-simulator.html">Time Value</a></li>
+                    <li><a href="career-growth-simulator.html">Career Growth</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('doForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const aName = document.getElementById('doAname').value;
+            const bName = document.getElementById('doBname').value;
+            const aInc = +document.getElementById('doAinc').value;
+            const bInc = +document.getElementById('doBinc').value;
+            const aFul = +document.getElementById('doAful').value;
+            const bFul = +document.getElementById('doBful').value;
+            const years = +document.getElementById('doYears').value;
+            const aLi = aInc * years;
+            const bLi = bInc * years;
+            const diff = bLi - aLi;
+            const data = [];
+            for (let y = 0; y <= years; y++) {
+                data.push({ label: 'Y' + y, value: Math.round((aInc + (bInc - aInc) * 0.5) * y) });
+            }
+            const fmt = v => '$' + Math.round(v).toLocaleString();
+            document.getElementById('doAli').textContent = fmt(aLi);
+            document.getElementById('doBli').textContent = fmt(bLi);
+            document.getElementById('doDiff').textContent = (diff >= 0 ? '+' : '') + fmt(diff);
+            document.getElementById('doScore').textContent = 'A: ' + aFul + ' | B: ' + bFul;
+            QAQCharts.lineChart(document.getElementById('doChart'), data, { format: 'currency', height: 320 });
+            const tlHtml = [3, 5, 10].filter(y => y <= years).map(y => '<div class="timeline-item"><div class="timeline-year">Y' + y + '</div><div class="timeline-text">A: ' + fmt(aInc * y) + ' • B: ' + fmt(bInc * y) + '</div></div>').join('');
+            document.getElementById('doTimeline').innerHTML = tlHtml;
+            document.getElementById('doDash').classList.add('show');
+            document.getElementById('doDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

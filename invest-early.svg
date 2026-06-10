@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="60" y="100" font-family="-apple-system, system-ui, sans-serif" font-size="42" font-weight="700" fill="white">Start now vs wait 10 years</text>
+  <text x="60" y="145" font-family="-apple-system, system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.85)">The same ending age, two very different results</text>
+
+  <!-- Two diverging paths -->
+  <g fill="none" stroke-width="6" stroke-linecap="round">
+    <!-- Early investor (winning) -->
+    <path d="M 100,500 Q 200,490 300,460 Q 450,410 600,330 Q 750,240 900,160 Q 1000,110 1100,80" stroke="white" stroke-width="8"/>
+    <!-- Late investor (losing) -->
+    <path d="M 600,500 Q 700,470 800,420 Q 900,360 1000,300 Q 1080,260 1100,240" stroke="#fbbf24" stroke-width="6" stroke-dasharray="10,5"/>
+  </g>
+
+  <!-- Markers -->
+  <g fill="white" font-family="-apple-system, system-ui, sans-serif">
+    <circle cx="100" cy="500" r="12" fill="white"/>
+    <text x="100" y="540" font-size="13" text-anchor="middle" fill="white">Age 22</text>
+    <text x="100" y="558" font-size="11" text-anchor="middle" fill="rgba(255,255,255,0.85)">Sarah starts</text>
+  </g>
+  <g fill="#fbbf24" font-family="-apple-system, system-ui, sans-serif">
+    <circle cx="600" cy="500" r="12" fill="#fbbf24"/>
+    <text x="600" y="540" font-size="13" text-anchor="middle" fill="#fbbf24">Age 32</text>
+    <text x="600" y="558" font-size="11" text-anchor="middle" fill="#fde68a">Mark starts</text>
+  </g>
+
+  <!-- End labels -->
+  <g font-family="-apple-system, system-ui, sans-serif">
+    <text x="1100" y="65" font-size="28" font-weight="700" text-anchor="end" fill="white">$830,000</text>
+    <text x="1100" y="88" font-size="12" text-anchor="end" fill="rgba(255,255,255,0.85)">Sarah, age 65</text>
+    <text x="1100" y="108" font-size="11" text-anchor="end" fill="rgba(255,255,255,0.7)">$200/mo for 43 years</text>
+
+    <text x="1100" y="225" font-size="22" font-weight="700" text-anchor="end" fill="#fbbf24">$680,000</text>
+    <text x="1100" y="248" font-size="12" text-anchor="end" fill="#fde68a">Mark, age 65</text>
+    <text x="1100" y="268" font-size="11" text-anchor="end" fill="rgba(253,230,138,0.7)">$400/mo for 33 years</text>
+  </g>
+
+  <!-- Bottom insight -->
+  <text x="600" y="595" font-family="-apple-system, system-ui, sans-serif" font-size="16" text-anchor="middle" fill="rgba(255,255,255,0.85)">Sarah contributed 35% less money. Ended up 22% richer.</text>
+
+  <text x="60" y="580" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="600" fill="rgba(255,255,255,0.95)">ZAQORI</text>
+  <text x="60" y="610" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)">See what today's choices mean in 10 years</text>
+</svg>

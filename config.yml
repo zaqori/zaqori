@@ -1,0 +1,173 @@
+# Decap CMS Configuration for ZAQORI
+# https://decapcms.org/docs/configuration-options/
+
+# Backend: Git Gateway (connects to Netlify Identity)
+# This allows admins to log in with email/password via Netlify Identity
+backend:
+  name: git-gateway
+  branch: main  # Change to your default branch if different
+
+# Enable editorial workflow (Draft → In Review → Ready)
+publish_mode: editorial_workflow
+
+# Media folder for uploaded images (featured images, etc.)
+media_folder: "images/articles"
+public_folder: "/images/articles"
+
+# Site URL & display URL (shown in the CMS UI)
+site_url: https://zaqori.com
+display_url: https://zaqori.com
+logo_url: /images/favicon.svg
+
+# Locale
+locale: en
+
+# Collections
+collections:
+  # ─────────────────────────────────────────────────────────
+  # Blog Articles
+  # ─────────────────────────────────────────────────────────
+  - name: "blog"
+    label: "Blog Articles"
+    label_singular: "Blog Article"
+    folder: "blog/content"  # New articles go here as .md files
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} — {{date | date('YYYY-MM-DD')}}"
+    sortable_fields: ["date", "title"]
+    view_groups:
+      - label: "By Year"
+        field: "date"
+        pattern: '[0-9]{4}'
+    view_filters:
+      - label: "Drafts"
+        field: "draft"
+        pattern: true
+      - label: "Published"
+        field: "draft"
+        pattern: false
+    fields:
+      # ── Required fields ──
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "The main headline of the article"
+
+      - label: "URL Slug"
+        name: "slug"
+        widget: "string"
+        hint: "URL-friendly version (lowercase, hyphens, no spaces). Example: my-article-title"
+        pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Slug must be lowercase with hyphens only"]
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        picker_utc: false
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Productivity", value: "Productivity" }
+          - { label: "Habits", value: "Habits" }
+          - { label: "Wealth Building", value: "Wealth Building" }
+          - { label: "Health & Fitness", value: "Health & Fitness" }
+          - { label: "Mindset", value: "Mindset" }
+          - { label: "Career", value: "Career" }
+          - { label: "Self-Improvement", value: "Self-Improvement" }
+
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        allow_multiple: false
+        media_library:
+          config:
+            multiple: false
+        hint: "1200x630px recommended. Goes to /images/articles/"
+
+      - label: "Meta Title (SEO)"
+        name: "meta_title"
+        widget: "string"
+        hint: "Title tag for search engines (50-60 chars ideal)"
+        pattern: ["^.{1,70}$", "Keep under 70 characters"]
+
+      - label: "Meta Description (SEO)"
+        name: "meta_description"
+        widget: "text"
+        hint: "Description tag for search engines (150-160 chars ideal)"
+        pattern: ["^.{1,200}$", "Keep under 200 characters"]
+
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "ZAQORI Team"
+        required: false
+
+      - label: "Reading Time (minutes)"
+        name: "read_time"
+        widget: "number"
+        default: 5
+        min: 1
+        max: 60
+        required: false
+
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: true
+        hint: "Uncheck to publish"
+
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        hint: "Optional tags for internal organization"
+        field: { label: "Tag", name: "tag", widget: "string" }
+
+      - label: "Article Body"
+        name: "body"
+        widget: "markdown"
+        hint: "Write the article in Markdown. Supports headings (##), bold, italic, links, lists, blockquotes, and images."
+
+  # ─────────────────────────────────────────────────────────
+  # Site Settings (singleton — global site configuration)
+  # ─────────────────────────────────────────────────────────
+  - name: "settings"
+    label: "Site Settings"
+    delete: false  # Prevent deletion
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "General Settings"
+        file: "site-settings/general.json"
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string", default: "ZAQORI" }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "See where today's choices lead tomorrow." }
+          - { label: "Contact Email", name: "contact_email", widget: "string", default: "zaqori.official@gmail.com" }
+          - { label: "Support Email", name: "support_email", widget: "string", default: "zaqori.support@gmail.com" }
+
+  # ─────────────────────────────────────────────────────────
+  # Pages (edit static pages like About, Contact)
+  # ─────────────────────────────────────────────────────────
+  - name: "pages"
+    label: "Static Pages"
+    files:
+      - name: "about"
+        label: "About Page"
+        file: "pages/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "pages/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }

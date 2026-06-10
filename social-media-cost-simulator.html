@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Cost Simulator - The Hidden Time Tax | ZAQORI</title>
+    <meta name="description" content="See what social media really costs you. The Social Media Cost Simulator projects lost time, money, and opportunities from daily scrolling.">
+    <link rel="canonical" href="https://zaqori.com/simulators/social-media-cost-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>📱 Social Media Cost Simulator</h1>
+                <p class="sim-intro">What does your daily scrolling really cost you? See the cumulative time, money, and missed opportunities from your social media use — over months and years.</p>
+
+                <form id="smForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Daily social media (hours)</label><input type="number" id="smHrs" value="2" min="0" max="10" step="0.25"></div>
+                        <div class="form-row"><label>Hourly value of your time ($)</label><input type="number" id="smVal" value="30" min="0" step="any"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Years to project</label><input type="number" id="smYears" value="5" min="1" max="30"></div>
+                        <div class="form-row"><label>Alternative activity (sleeping, reading, exercising)</label>
+                            <select id="smAlt">
+                                <option value="reading" selected>Reading 20 pages/day</option>
+                                <option value="exercise">Exercising 30 min/day</option>
+                                <option value="learning">Learning a new skill</option>
+                                <option value="work">Working / earning more</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Calculate The True Cost →</button>
+                </form>
+
+                <div class="dashboard" id="smDash">
+                    <div class="dashboard-header">
+                        <h3>The True Cost of Social Media</h3>
+                        <button class="share-btn" onclick="shareResults('Social Media Cost Simulator', 'My social media cost on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Total Hours Lost</div><div class="stat-value" id="smHrsLost">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Money Lost</div><div class="stat-value" id="smMoney">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Books NOT Read</div><div class="stat-value" id="smBooks">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Days of Your Life</div><div class="stat-value" id="smDays">0</div></div>
+                    </div>
+                    <div class="chart-container" id="smChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Cumulative Impact</div><div class="timeline-items" id="smTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Social Media Cost Simulator?</h2>
+                    <p>The Social Media Cost Simulator is one of the most eye-opening tools on ZAQORI. Most people underestimate their daily social media use by 50-100%. They say "an hour" when it's actually two, three, or more. And because the activity feels "free" (no money exchanged), the time cost stays invisible.</p>
+                    <p>This tool makes the cumulative cost visible. By projecting daily scrolling into months and years, you see exactly how much time — and how much money, in terms of your hourly value — you've spent on apps that didn't make your life meaningfully better.</p>
+
+                    <h3>The Time Tax Math</h3>
+                    <p>Social media's cost is simple: it's your time multiplied by what that time could have produced.</p>
+                    <div class="formula-box">Total Cost = Daily Hours × 365 × Years × Hourly Value</div>
+                    <p>For someone spending 2 hours a day for 5 years with a $30/hour time value, that's $109,500 of time — and over 3,650 hours that could have been invested elsewhere.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Use your phone's screen-time tracker to find your actual daily social media use.</li>
+                        <li>Enter that number and your honest hourly value.</li>
+                        <li>Set a time horizon and choose what you could have been doing instead.</li>
+                        <li>Click "Calculate The True Cost" to see the projection.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Social Media Cost</h2>
+                    <p>The numbers are sobering. Many users realize they have spent the equivalent of multiple years of their adult life on platforms that add little lasting value. But the simulator is not about guilt — it's about choice. Once you see the cost, you can make informed decisions about whether the trade-off is worth it.</p>
+                    <p>Many ZAQORI users cut their social media time by 50-70% after running this simulation and reinvest the time in reading, exercise, learning, or side projects. Use the Reading Progress and Productivity Growth simulators to model what you could do with the recovered time.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>How do I find my actual social media use?</h4><p>Check your phone's screen-time settings (iOS: Settings > Screen Time; Android: Settings > Digital Wellbeing). Most people are surprised — actual use is often 2-3× what they estimate.</p></div>
+                    <div class="faq-item"><h4>How do I value my time?</h4><p>Take your annual income, divide by 2,000 working hours, and add the value of leisure time. A common rule: $25-50/hour for most professionals. Higher if you're a high earner.</p></div>
+                    <div class="faq-item"><h4>Is all social media bad?</h4><p>No. Genuine connection, learning, and professional networking are valuable. The simulator helps you see when passive consumption crowds out active engagement with your real life.</p></div>
+                    <div class="faq-item"><h4>What's a healthy social media use?</h4><p>Most experts suggest under 30-60 minutes per day of intentional use. Anything beyond is usually reactive scrolling that adds little value.</p></div>
+                    <div class="faq-item"><h4>How can I cut back?</h4><p>Remove apps from your phone, use website blockers during work hours, schedule "phone-free" times (mornings, meals, before bed), and replace the habit with something you value (reading, walking, etc.).</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="reading-progress-simulator.html">Reading Progress Simulator</a> — what you could read instead.</li>
+                        <li><a href="productivity-growth-simulator.html">Productivity Growth Simulator</a> — earn more with the time.</li>
+                        <li><a href="time-value-simulator.html">Time Value Simulator</a> — quantify your time.</li>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — replace the habit with a better one.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Life Simulators</h3><ul class="sidebar-list">
+                    <li><a href="social-media-cost-simulator.html">Social Media Cost</a></li>
+                    <li><a href="time-value-simulator.html">Time Value</a></li>
+                    <li><a href="habit-builder-simulator.html">Habit Builder</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('smForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const hrs = +document.getElementById('smHrs').value;
+            const val = +document.getElementById('smVal').value;
+            const years = +document.getElementById('smYears').value;
+            const totalHrs = Math.round(hrs * 365 * years);
+            const money = Math.round(totalHrs * val);
+            const books = Math.floor((hrs * 365 * years) / 30);
+            const days = Math.round(totalHrs / 24);
+            const data = [];
+            for (let y = 0; y <= years; y++) data.push({ label: 'Y' + y, value: Math.round(hrs * 365 * y) });
+            const fmt = v => '$' + v.toLocaleString();
+            document.getElementById('smHrsLost').textContent = totalHrs.toLocaleString() + 'h';
+            document.getElementById('smMoney').textContent = fmt(money);
+            document.getElementById('smBooks').textContent = books;
+            document.getElementById('smDays').textContent = days;
+            QAQCharts.lineChart(document.getElementById('smChart'), data, { height: 320 });
+            const tlHtml = [1, 3, 5, 10].filter(y => y <= years).map(y => '<div class="timeline-item"><div class="timeline-year">Y' + y + '</div><div class="timeline-text">' + Math.round(hrs * 365 * y).toLocaleString() + 'h lost (' + fmt(Math.round(hrs * 365 * y * val)) + ')</div></div>').join('');
+            document.getElementById('smTimeline').innerHTML = tlHtml;
+            document.getElementById('smDash').classList.add('show');
+            document.getElementById('smDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

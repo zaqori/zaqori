@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Background grid -->
+  <g opacity="0.1" stroke="white" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+  </g>
+
+  <!-- Title -->
+  <text x="60" y="100" font-family="-apple-system, system-ui, sans-serif" font-size="42" font-weight="700" fill="white">$10/day × 20 years</text>
+  <text x="60" y="145" font-family="-apple-system, system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.85)">The compound interest timeline</text>
+
+  <!-- Growth curve -->
+  <path d="M 100,500 Q 200,490 300,470 T 500,400 T 700,290 T 900,180 T 1100,80"
+        stroke="white" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+  <!-- Coin stacks at year markers -->
+  <g fill="white" opacity="0.95">
+    <circle cx="200" cy="495" r="8"/>
+    <text x="200" y="535" font-size="14" text-anchor="middle" fill="rgba(255,255,255,0.9)">Yr 1</text>
+    <text x="200" y="555" font-size="16" font-weight="600" text-anchor="middle" fill="white">$3.6k</text>
+
+    <circle cx="500" cy="395" r="10"/>
+    <text x="500" y="435" font-size="14" text-anchor="middle" fill="rgba(255,255,255,0.9)">Yr 5</text>
+    <text x="500" y="455" font-size="16" font-weight="600" text-anchor="middle" fill="white">$21k</text>
+
+    <circle cx="800" cy="220" r="14"/>
+    <text x="800" y="260" font-size="14" text-anchor="middle" fill="rgba(255,255,255,0.9)">Yr 10</text>
+    <text x="800" y="280" font-size="16" font-weight="600" text-anchor="middle" fill="white">$52k</text>
+
+    <circle cx="1100" cy="80" r="18"/>
+    <text x="1100" y="120" font-size="14" text-anchor="middle" fill="rgba(255,255,255,0.9)">Yr 20</text>
+    <text x="1100" y="140" font-size="18" font-weight="700" text-anchor="middle" fill="white">$156k</text>
+  </g>
+
+  <!-- Dollar signs along curve -->
+  <g fill="rgba(255,255,255,0.4)" font-family="-apple-system, system-ui, sans-serif" font-size="32" font-weight="700">
+    <text x="350" y="465">$</text>
+    <text x="650" y="320">$</text>
+    <text x="950" y="135">$</text>
+  </g>
+
+  <text x="60" y="580" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="600" fill="rgba(255,255,255,0.95)">ZAQORI</text>
+  <text x="60" y="610" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)">See what today's choices mean in 10 years</text>
+</svg>

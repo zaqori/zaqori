@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="60" y="100" font-family="-apple-system, system-ui, sans-serif" font-size="42" font-weight="700" fill="white">Small habits, massive wealth</text>
+  <text x="60" y="145" font-family="-apple-system, system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.85)">5 daily habits that compound into millions</text>
+
+  <!-- Staircase of coins growing -->
+  <g transform="translate(150, 480)">
+    <!-- Step 1 -->
+    <rect x="0" y="-50" width="180" height="50" fill="rgba(255,255,255,0.4)" rx="4"/>
+    <circle cx="90" cy="-25" r="22" fill="white"/>
+    <text x="90" y="-19" font-family="-apple-system, system-ui, sans-serif" font-size="22" text-anchor="middle" fill="#10b981" font-weight="700">1</text>
+    <text x="90" y="20" font-size="13" text-anchor="middle" fill="white">Save % first</text>
+
+    <!-- Step 2 -->
+    <rect x="200" y="-110" width="180" height="110" fill="rgba(255,255,255,0.5)" rx="4"/>
+    <circle cx="290" cy="-85" r="22" fill="white"/>
+    <text x="290" y="-79" font-family="-apple-system, system-ui, sans-serif" font-size="22" text-anchor="middle" fill="#10b981" font-weight="700">2</text>
+    <text x="290" y="-40" font-size="13" text-anchor="middle" fill="white">Track expenses</text>
+
+    <!-- Step 3 -->
+    <rect x="400" y="-180" width="180" height="180" fill="rgba(255,255,255,0.6)" rx="4"/>
+    <circle cx="490" cy="-155" r="22" fill="white"/>
+    <text x="490" y="-149" font-family="-apple-system, system-ui, sans-serif" font-size="22" text-anchor="middle" fill="#10b981" font-weight="700">3</text>
+    <text x="490" y="-110" font-size="13" text-anchor="middle" fill="white">Invest raises</text>
+
+    <!-- Step 4 -->
+    <rect x="600" y="-260" width="180" height="260" fill="rgba(255,255,255,0.75)" rx="4"/>
+    <circle cx="690" cy="-235" r="22" fill="white"/>
+    <text x="690" y="-229" font-family="-apple-system, system-ui, sans-serif" font-size="22" text-anchor="middle" fill="#10b981" font-weight="700">4</text>
+    <text x="690" y="-190" font-size="13" text-anchor="middle" fill="white">Avoid debt</text>
+
+    <!-- Step 5 -->
+    <rect x="800" y="-350" width="180" height="350" fill="rgba(255,255,255,0.9)" rx="4"/>
+    <circle cx="890" cy="-325" r="22" fill="#10b981"/>
+    <text x="890" y="-319" font-family="-apple-system, system-ui, sans-serif" font-size="22" text-anchor="middle" fill="white" font-weight="700">5</text>
+    <text x="890" y="-280" font-size="13" text-anchor="middle" fill="#065f46" font-weight="600">Read daily</text>
+    <text x="890" y="-260" font-size="12" text-anchor="middle" fill="#065f46">→ millions</text>
+  </g>
+
+  <!-- Dollar sign at top -->
+  <text x="970" y="155" font-family="-apple-system, system-ui, sans-serif" font-size="60" fill="white" opacity="0.4" font-weight="700">$</text>
+
+  <text x="60" y="580" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="600" fill="rgba(255,255,255,0.95)">ZAQORI</text>
+  <text x="60" y="610" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)">See what today's choices mean in 10 years</text>
+</svg>

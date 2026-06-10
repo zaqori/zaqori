@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Impact Simulator - Diet Effects | ZAQORI</title>
+    <meta name="description" content="See the long-term weight impact of any diet change. The Calorie Impact Simulator projects weight change from daily calorie adjustments.">
+    <link rel="canonical" href="https://zaqori.com/simulators/calorie-impact-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>🍎 Calorie Impact Simulator</h1>
+                <p class="sim-intro">See the long-term weight impact of any diet change. Whether you cut 200 calories, switch to intermittent fasting, or add a daily dessert — see what happens over months and years.</p>
+
+                <form id="ciForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Current weight (kg)</label><input type="number" id="ciW" value="80" min="30" max="300"></div>
+                        <div class="form-row"><label>Daily calorie change</label><input type="number" id="ciChg" value="-500" step="any"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Starting maintenance calories</label><input type="number" id="ciTdee" value="2200" min="800" max="5000"></div>
+                        <div class="form-row"><label>Time horizon (years)</label><input type="number" id="ciYears" value="1" min="1" max="10"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Simulate Calorie Change →</button>
+                </form>
+
+                <div class="dashboard" id="ciDash">
+                    <div class="dashboard-header">
+                        <h3>Your Calorie Impact</h3>
+                        <button class="share-btn" onclick="shareResults('Calorie Impact Simulator', 'My calorie impact on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Final Weight</div><div class="stat-value" id="ciFinal">0kg</div></div>
+                        <div class="stat-card"><div class="stat-label">Total Change</div><div class="stat-value" id="ciChgTotal">0kg</div></div>
+                        <div class="stat-card"><div class="stat-label">New Daily Calories</div><div class="stat-value" id="ciNew">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Total Calorie Shift</div><div class="stat-value" id="ciTotal">0</div></div>
+                    </div>
+                    <div class="chart-container" id="ciChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Weight Loss Markers</div><div class="timeline-items" id="ciTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Calorie Impact Simulator?</h2>
+                    <p>The Calorie Impact Simulator shows the long-term weight consequences of any daily calorie adjustment. Most diet advice focuses on the first few weeks, but the real impact — and the real challenge — is what happens over months and years. This tool makes that timeline visible.</p>
+                    <p>Whether you're considering a 200-calorie cut, switching to a specific diet, or wondering what that daily latte adds up to, the simulator gives you a clear, evidence-based answer.</p>
+
+                    <h3>The Calorie Math</h3>
+                    <p>One kilogram of body fat contains approximately 7,700 calories. So the weight change formula is:</p>
+                    <div class="formula-box">Weight Change = (Daily Calorie Change × 365 × Years) ÷ 7,700</div>
+                    <p>Note: actual weight loss is slightly slower than this math suggests, especially as you lose weight and your metabolism adjusts. The simulator accounts for this with a slight diminishing-returns factor.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your current weight and your daily calorie change (negative for deficit, positive for surplus).</li>
+                        <li>Set your baseline maintenance calories and time horizon.</li>
+                        <li>Click "Simulate Calorie Change" to see your projected weight trajectory.</li>
+                        <li>Run multiple scenarios to compare different dietary changes.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Calorie Impact</h2>
+                    <p>Small daily changes feel small. "Just" 200 calories a day is one cookie, one soda, or a small portion of fries. But the simulator shows what that small change adds up to over 1, 5, or 10 years — and the answer is dramatic.</p>
+                    <p>It's also useful for stress-testing diets. Before committing to a 1000-calorie-a-day deficit, see what it actually looks like over time. Sustainable moderate changes typically beat aggressive ones in the long run.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>Is the math exact?</h4><p>It's an approximation. Real weight loss includes water, muscle, and fat in different ratios, and metabolism adjusts as you lose weight. The simulator gives you a reasonable estimate, not a guarantee.</p></div>
+                    <div class="faq-item"><h4>What about plateaus?</h4><p>Plateaus happen because metabolism adapts to lower intake. The simulator models gradual diminishing returns but doesn't capture every individual's response. Expect actual progress to be slightly slower than the projection.</p></div>
+                    <div class="faq-item"><h4>What's a sustainable deficit?</h4><p>Most research supports 300-500 calories per day for sustainable weight loss. Larger deficits lead to muscle loss, hormonal disruption, and metabolic adaptation. The 4% rule for your goal weight applies.</p></div>
+                    <div class="faq-item"><h4>What if I exercise more too?</h4><p>Add the additional calories burned (e.g., 300 per session × 4 sessions = 1200/week = 170/day) to your daily deficit. The simulator shows pure dietary change; exercise multiplies the result.</p></div>
+                    <div class="faq-item"><h4>Does muscle weigh more than fat?</h4><p>Muscle is denser than fat — a pound of muscle takes up less space than a pound of fat. As you exercise and lose fat while preserving muscle, the scale may not drop as fast, but your body composition improves significantly.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="future-weight-simulator.html">Future Weight Simulator</a> — see your weight trajectory.</li>
+                        <li><a href="fitness-progress-simulator.html">Fitness Progress Simulator</a> — strength and endurance gains.</li>
+                        <li><a href="sleep-impact-simulator.html">Sleep Impact Simulator</a> — sleep affects hunger and metabolism.</li>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — build the diet habit.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Health Simulators</h3><ul class="sidebar-list">
+                    <li><a href="calorie-impact-simulator.html">Calorie Impact</a></li>
+                    <li><a href="future-weight-simulator.html">Future Weight</a></li>
+                    <li><a href="fitness-progress-simulator.html">Fitness Progress</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('ciForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const w = +document.getElementById('ciW').value;
+            const chg = +document.getElementById('ciChg').value;
+            const tdee = +document.getElementById('ciTdee').value;
+            const years = +document.getElementById('ciYears').value;
+            const data = [{ label: 'Now', value: w }];
+            const months = years * 12;
+            const factor = 7700;
+            for (let m = 1; m <= months; m++) {
+                const weight = w + (chg * 30 * m) / factor;
+                const adjustedW = w + (chg * 30 * m) / factor * 0.9;
+                data.push({ label: 'M' + m, value: Math.max(30, Math.round(adjustedW)) });
+            }
+            const final = Math.max(30, w + (chg * 365 * years) / factor * 0.9);
+            const totalChg = final - w;
+            const newCals = tdee + chg;
+            const totalShift = chg * 365 * years;
+            const fmt = v => v.toFixed(1) + 'kg';
+            document.getElementById('ciFinal').textContent = fmt(final);
+            document.getElementById('ciChgTotal').textContent = (totalChg >= 0 ? '+' : '') + totalChg.toFixed(1) + 'kg';
+            document.getElementById('ciNew').textContent = Math.round(newCals) + ' kcal';
+            document.getElementById('ciTotal').textContent = (totalShift >= 0 ? '+' : '') + Math.round(totalShift).toLocaleString();
+            QAQCharts.lineChart(document.getElementById('ciChart'), data, { format: 'kg', height: 320 });
+            const milestones = [1, 3, 6, 12, 18, 24].filter(m => m <= months);
+            const tlHtml = milestones.map(m => '<div class="timeline-item"><div class="timeline-year">M' + m + '</div><div class="timeline-text">' + data[m].value.toFixed(1) + 'kg (' + (data[m].value - w >= 0 ? '+' : '') + (data[m].value - w).toFixed(1) + 'kg)</div></div>').join('');
+            document.getElementById('ciTimeline').innerHTML = tlHtml;
+            document.getElementById('ciDash').classList.add('show');
+            document.getElementById('ciDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="60" y="100" font-family="-apple-system, system-ui, sans-serif" font-size="42" font-weight="700" fill="white">20 pages a day</text>
+  <text x="60" y="145" font-family="-apple-system, system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.85)">What daily reading becomes over a lifetime</text>
+
+  <!-- Book stack growing -->
+  <g transform="translate(800, 480)">
+    <!-- Stack of books -->
+    <g fill="rgba(255,255,255,0.9)" stroke="rgba(255,255,255,0.4)">
+      <rect x="-180" y="-30" width="360" height="30" rx="3" fill="#fef3c7"/>
+      <rect x="-180" y="-60" width="360" height="30" rx="3" fill="#fed7aa"/>
+      <rect x="-180" y="-90" width="360" height="30" rx="3" fill="#fbbf24"/>
+      <rect x="-180" y="-120" width="360" height="30" rx="3" fill="#f59e0b"/>
+      <rect x="-180" y="-150" width="360" height="30" rx="3" fill="#d97706"/>
+      <rect x="-180" y="-180" width="360" height="30" rx="3" fill="#92400e"/>
+    </g>
+  </g>
+
+  <!-- Book icons floating up -->
+  <g fill="white" font-family="-apple-system, system-ui, sans-serif">
+    <text x="400" y="400" font-size="32">📖</text>
+    <text x="500" y="350" font-size="36">📚</text>
+    <text x="620" y="290" font-size="40">📕</text>
+    <text x="750" y="240" font-size="44">📗</text>
+    <text x="900" y="200" font-size="48">📘</text>
+  </g>
+
+  <!-- Number ladder -->
+  <g font-family="-apple-system, system-ui, sans-serif" fill="white">
+    <text x="60" y="250" font-size="20" font-weight="600">In 1 year: 30 books</text>
+    <text x="60" y="290" font-size="20" font-weight="600">In 5 years: 150 books</text>
+    <text x="60" y="330" font-size="20" font-weight="600">In 10 years: 300 books</text>
+    <text x="60" y="370" font-size="22" font-weight="700" fill="#fef3c7">In a career: 1,000+</text>
+  </g>
+
+  <!-- Light from above -->
+  <g opacity="0.3">
+    <path d="M 600,0 L 300,300 L 900,300 Z" fill="white" opacity="0.4"/>
+  </g>
+
+  <text x="60" y="580" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="600" fill="rgba(255,255,255,0.95)">ZAQORI</text>
+  <text x="60" y="610" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)">See what today's choices mean in 10 years</text>
+</svg>

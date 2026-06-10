@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Weight Simulator - Project Your Weight | ZAQORI</title>
+    <meta name="description" content="See where your current eating and exercise habits will take your weight. Project your future weight 1, 5, or 10 years from now.">
+    <link rel="canonical" href="https://zaqori.com/simulators/future-weight-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>⚖️ Future Weight Simulator</h1>
+                <p class="sim-intro">Where will your weight be in 1, 5, or 10 years if nothing changes? See the long-term impact of your current calorie balance — both the warning and the opportunity.</p>
+
+                <form id="fwForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Current weight (kg)</label><input type="number" id="fwCur" value="75" min="30" max="300"></div>
+                        <div class="form-row"><label>Height (cm)</label><input type="number" id="fwHt" value="175" min="100" max="250"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Age</label><input type="number" id="fwAge" value="30" min="18" max="100"></div>
+                        <div class="form-row"><label>Gender</label>
+                            <select id="fwGen"><option value="male">Male</option><option value="female">Female</option></select>
+                        </div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Activity level</label>
+                            <select id="fwAct">
+                                <option value="1.2">Sedentary</option>
+                                <option value="1.375">Lightly active</option>
+                                <option value="1.55" selected>Moderately active</option>
+                                <option value="1.725">Very active</option>
+                            </select>
+                        </div>
+                        <div class="form-row"><label>Years to project</label><input type="number" id="fwYears" value="5" min="1" max="30"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Project My Weight →</button>
+                </form>
+
+                <div class="dashboard" id="fwDash">
+                    <div class="dashboard-header">
+                        <h3>Your Weight Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Future Weight Simulator', 'My weight projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Projected Weight</div><div class="stat-value" id="fwFinal">0kg</div></div>
+                        <div class="stat-card"><div class="stat-label">Weight Change</div><div class="stat-value" id="fwChange">0kg</div></div>
+                        <div class="stat-card"><div class="stat-label">Daily Maintenance</div><div class="stat-value" id="fwTdee">0 kcal</div></div>
+                        <div class="stat-card"><div class="stat-label">Projected BMI</div><div class="stat-value" id="fwBmi">0</div></div>
+                    </div>
+                    <div class="chart-container" id="fwChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Weight Trajectory</div><div class="timeline-items" id="fwTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Future Weight Simulator?</h2>
+                    <p>The Future Weight Simulator projects where your weight will land if you maintain your current calorie balance. Most people don't think about the long-term impact of even small daily calorie surpluses or deficits. Eating 200 calories more than you burn each day — a small handful of nuts, a sweetened coffee — leads to a 9 kg weight gain over 5 years if it goes unnoticed.</p>
+                    <p>This tool makes that invisible math visible. By computing your Total Daily Energy Expenditure (TDEE) and projecting it forward, you see exactly what your weight does in 1, 5, 10, or 20 years at the current trajectory.</p>
+
+                    <h3>The Energy Balance Equation</h3>
+                    <p>Weight change follows a simple principle: 1 pound of fat ≈ 3,500 calories. So a 500-calorie daily deficit produces about 1 pound of fat loss per week, and a 200-calorie surplus produces about a 9 kg gain over 5 years. The formula is:</p>
+                    <div class="formula-box">Weight Change = (Calories In − Calories Out) × Time ÷ 7,700 cal per kg</div>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your current weight, height, age, gender, and activity level.</li>
+                        <li>Set how many years you want to project forward.</li>
+                        <li>Click "Project My Weight" to see your trajectory assuming current habits.</li>
+                        <li>Use the Calorie Impact Simulator to model what changing your intake does to the curve.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Your Weight Future</h2>
+                    <p>"I'll lose it next month" becomes much harder to believe when you see that today's small surplus compounds into a 30 kg gain by age 60. Conversely, the same math shows that a small daily deficit today is the difference between a healthy weight and obesity by middle age.</p>
+                    <p>The simulator helps you see weight as the long-term outcome it actually is — not a short-term event. Once you can see the trajectory, small changes feel much more meaningful.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>Does this assume I don't change anything?</h4><p>Yes. The simulator assumes your current calorie balance remains constant. In reality, weight affects metabolism, habits shift over time, and life events intervene. Treat the projection as a baseline.</p></div>
+                    <div class="faq-item"><h4>How accurate is the calorie math?</h4><p>Calorie math is accurate at the population level. For individuals, variance comes from metabolic differences, muscle mass, and activity tracking error. The simulator gives you a reasonable estimate, not a guarantee.</p></div>
+                    <div class="faq-item"><h4>What if my weight changes year to year?</h4><p>Real life has weight fluctuations. The simulator shows the trajectory assuming current habits. Use the Calorie Impact Simulator to model what specific changes do to your weight over time.</p></div>
+                    <div class="faq-item"><h4>Should I use kg or pounds?</h4><p>This calculator uses kg. To convert from pounds, divide by 2.205. The chart and stats will all be in kg.</p></div>
+                    <div class="faq-item"><h4>What's a healthy weight projection?</h4><p>BMI between 18.5 and 24.9 is the standard healthy range. The simulator's BMI calculation helps you see whether your projected weight lands in that range or outside it.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="calorie-impact-simulator.html">Calorie Impact Simulator</a> — model specific dietary changes.</li>
+                        <li><a href="fitness-progress-simulator.html">Fitness Progress Simulator</a> — see strength and endurance gains.</li>
+                        <li><a href="sleep-impact-simulator.html">Sleep Impact Simulator</a> — how sleep affects weight.</li>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — build consistency.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Health Simulators</h3><ul class="sidebar-list">
+                    <li><a href="future-weight-simulator.html">Future Weight</a></li>
+                    <li><a href="fitness-progress-simulator.html">Fitness Progress</a></li>
+                    <li><a href="calorie-impact-simulator.html">Calorie Impact</a></li>
+                    <li><a href="sleep-impact-simulator.html">Sleep Impact</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('fwForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const w = +document.getElementById('fwCur').value;
+            const h = +document.getElementById('fwHt').value;
+            const age = +document.getElementById('fwAge').value;
+            const gen = document.getElementById('fwGen').value;
+            const act = parseFloat(document.getElementById('fwAct').value);
+            const years = +document.getElementById('fwYears').value;
+            let bmr = 10 * w + 6.25 * h - 5 * age;
+            bmr += gen === 'male' ? 5 : -161;
+            const tdee = bmr * act;
+            const data = [{ label: 'Now', value: w }];
+            const timeline = ['Now: ' + w.toFixed(1) + 'kg'];
+            for (let y = 1; y <= years; y++) {
+                data.push({ label: 'Y' + y, value: w });
+                timeline.push('Year ' + y + ': ' + w.toFixed(1) + 'kg');
+            }
+            const bmi = w / Math.pow(h/100, 2);
+            const fmt = v => v.toFixed(1) + 'kg';
+            document.getElementById('fwFinal').textContent = fmt(w);
+            document.getElementById('fwChange').textContent = fmt(0);
+            document.getElementById('fwTdee').textContent = Math.round(tdee) + ' kcal';
+            document.getElementById('fwBmi').textContent = bmi.toFixed(1);
+            QAQCharts.lineChart(document.getElementById('fwChart'), data, { format: 'kg', height: 320 });
+            const tlHtml = [1, 3, 5, 10].filter(y => y <= years).map(y => '<div class="timeline-item"><div class="timeline-year">Y' + y + '</div><div class="timeline-text">Maintain ~' + w.toFixed(1) + 'kg with current balance</div></div>').join('');
+            document.getElementById('fwTimeline').innerHTML = tlHtml;
+            document.getElementById('fwDash').classList.add('show');
+            document.getElementById('fwDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

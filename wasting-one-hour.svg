@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#f43f5e"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="60" y="100" font-family="-apple-system, system-ui, sans-serif" font-size="42" font-weight="700" fill="white">1 hour a day × 50 years</text>
+  <text x="60" y="145" font-family="-apple-system, system-ui, sans-serif" font-size="22" fill="rgba(255,255,255,0.85)">The real cost nobody talks about</text>
+
+  <!-- Big hourglass tilted -->
+  <g transform="translate(600, 320) rotate(-15)">
+    <path d="M -100,-130 L 100,-130 L 100,-115 L 0,0 L 100,115 L 100,130 L -100,130 L -100,115 L 0,0 L -100,-115 Z"
+          fill="rgba(255,255,255,0.95)" stroke="white" stroke-width="3"/>
+    <path d="M -85,-125 L 85,-125 L 85,-110 L 35,-50 L -35,-50 L -85,-110 Z" fill="#fbbf24"/>
+    <path d="M -75,70 L 75,70 L 75,105 L 50,120 L -50,120 L -75,105 Z" fill="#fbbf24"/>
+  </g>
+
+  <!-- Money/clock falling out -->
+  <g fill="white" opacity="0.9">
+    <circle cx="430" cy="420" r="20" fill="#fbbf24"/>
+    <text x="430" y="427" font-family="-apple-system, system-ui, sans-serif" font-size="18" text-anchor="middle" fill="white" font-weight="700">$</text>
+
+    <circle cx="370" cy="480" r="15" fill="white" opacity="0.7"/>
+    <text x="370" y="485" font-family="-apple-system, system-ui, sans-serif" font-size="14" text-anchor="middle" fill="#7f1d1d" font-weight="700">$</text>
+
+    <circle cx="480" cy="500" r="12" fill="white" opacity="0.5"/>
+    <text x="480" y="504" font-family="-apple-system, system-ui, sans-serif" font-size="12" text-anchor="middle" fill="#7f1d1d" font-weight="700">$</text>
+  </g>
+
+  <!-- Stats -->
+  <g font-family="-apple-system, system-ui, sans-serif" fill="white">
+    <text x="200" y="280" font-size="20" font-weight="600">⏰ 18,250 hours</text>
+    <text x="200" y="305" font-size="14" fill="rgba(255,255,255,0.85)">2 years of life</text>
+
+    <text x="200" y="380" font-size="20" font-weight="600">💰 $1M+</text>
+    <text x="200" y="405" font-size="14" fill="rgba(255,255,255,0.85)">in time value lost</text>
+
+    <text x="900" y="280" font-size="20" font-weight="600" text-anchor="end">❤️ Years of life</text>
+    <text x="900" y="305" font-size="14" text-anchor="end" fill="rgba(255,255,255,0.85)">health costs add up</text>
+  </g>
+
+  <text x="60" y="580" font-family="-apple-system, system-ui, sans-serif" font-size="28" font-weight="600" fill="rgba(255,255,255,0.95)">ZAQORI</text>
+  <text x="60" y="610" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="rgba(255,255,255,0.7)">See what today's choices mean in 10 years</text>
+</svg>

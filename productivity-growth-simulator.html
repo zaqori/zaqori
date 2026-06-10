@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Growth Simulator - Career Output | ZAQORI</title>
+    <meta name="description" content="See how consistent focus compounds into career output. The Productivity Growth Simulator projects your work output, deep work hours, and career trajectory.">
+    <link rel="canonical" href="https://zaqori.com/simulators/productivity-growth-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>⚡ Productivity Growth Simulator</h1>
+                <p class="sim-intro">See what consistent focus delivers in your career. The Productivity Growth Simulator projects your work output, deep work hours, and long-term career impact.</p>
+
+                <form id="prForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Daily focused work (hours)</label><input type="number" id="prHrs" value="3" min="0.5" max="10" step="0.5"></div>
+                        <div class="form-row"><label>Deep work quality (1-10)</label><input type="number" id="prQual" value="6" min="1" max="10"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Years to project</label><input type="number" id="prYears" value="5" min="1" max="20"></div>
+                        <div class="form-row"><label>Industry growth rate (%)</label><input type="number" id="prInd" value="3" step="any"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Project My Productivity →</button>
+                </form>
+
+                <div class="dashboard" id="prDash">
+                    <div class="dashboard-header">
+                        <h3>Your Productivity Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Productivity Growth Simulator', 'My productivity projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Output Index</div><div class="stat-value" id="prOut">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Deep Work Hours/Year</div><div class="stat-value" id="prDW">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Career Multiplier</div><div class="stat-value" id="prMul">×0</div></div>
+                        <div class="stat-card"><div class="stat-label">5-Year Output</div><div class="stat-value" id="pr5y">0</div></div>
+                    </div>
+                    <div class="chart-container" id="prChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Career Markers</div><div class="timeline-items" id="prTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Productivity Growth Simulator?</h2>
+                    <p>The Productivity Growth Simulator models how consistent focus builds into a meaningful career. Most professionals are interrupted every 8-12 minutes in modern knowledge work. Recovering from an interruption takes 23 minutes. That means many knowledge workers are productive for only a fraction of their official work hours.</p>
+                    <p>This tool helps you see the long-term difference between busy-work hours and deep-work hours. The same total hours invested differently produce radically different career outcomes.</p>
+
+                    <h3>Deep Work vs. Shallow Work</h3>
+                    <p>Cal Newport's research on deep work shows that the ability to focus without distraction is becoming both rare and valuable in the modern economy. The formula approximates output:</p>
+                    <div class="formula-box">Output = Hours × Quality × (1 + Industry Growth)^Years</div>
+                    <p>Quality captures whether the work is deep (high value) or shallow (low value). Industry growth captures external opportunity.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your daily focused work hours and rate your focus quality.</li>
+                        <li>Set the time horizon and your industry's growth rate.</li>
+                        <li>Click "Project My Productivity" to see your output trajectory and career multiplier.</li>
+                        <li>Run scenarios with different focus quality to see what deep work actually delivers.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Productivity</h2>
+                    <p>Most professionals underestimate the value of focus. They assume career success comes from working more hours, but the data suggests it comes from working differently — protecting focus time, batching shallow work, and creating artifacts of deep thought.</p>
+                    <p>The simulator helps you see the compounding effect of consistent deep work. Five years of 3 hours/day at quality 7 produces dramatically more output than 5 years of 6 hours/day at quality 3 — even though the latter sounds more impressive on a timesheet.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>What is deep work?</h4><p>Deep work is sustained, distraction-free concentration on a cognitively demanding task. It's the kind of work that produces new value: writing, coding, designing, analyzing, creating. It's different from shallow work like email and meetings.</p></div>
+                    <div class="faq-item"><h4>How can I increase my deep work?</h4><p>Schedule it, protect it, and eliminate distractions. Phone in another room, email off, single task. The Pomodoro technique, time blocking, and a quiet workspace all help.</p></div>
+                    <div class="faq-item"><h4>What about industry growth?</h4><p>Some industries grow faster than others. Tech, biotech, and renewable energy are growing fast; print media, retail, and some traditional industries are shrinking. The simulator accounts for this external factor.</p></div>
+                    <div class="faq-item"><h4>Does this work for entrepreneurs?</h4><p>Yes, perhaps even more so. Founders who maintain deep work on their most important problems — the "one thing" — dramatically outperform those who get pulled into reactive shallow work.</p></div>
+                    <div class="faq-item"><h4>What about rest and recovery?</h4><p>Deep work is sustainable when paired with adequate rest. The 4-hour daily deep work limit reflects cognitive limits; beyond that, quality drops sharply.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="career-growth-simulator.html">Career Growth Simulator</a> — earnings over your career.</li>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — build focus as a habit.</li>
+                        <li><a href="study-success-simulator.html">Study Success Simulator</a> — academic performance.</li>
+                        <li><a href="social-media-cost-simulator.html">Social Media Cost Simulator</a> — see what distraction costs you.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Growth Simulators</h3><ul class="sidebar-list">
+                    <li><a href="productivity-growth-simulator.html">Productivity Growth</a></li>
+                    <li><a href="career-growth-simulator.html">Career Growth</a></li>
+                    <li><a href="habit-builder-simulator.html">Habit Builder</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('prForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const hrs = +document.getElementById('prHrs').value;
+            const q = +document.getElementById('prQual').value;
+            const years = +document.getElementById('prYears').value;
+            const ind = +document.getElementById('prInd').value / 100;
+            const eff = hrs * (q/10);
+            const dwYear = eff * 250;
+            const data = [];
+            for (let y = 0; y <= years; y++) {
+                data.push({ label: 'Y' + y, value: Math.round(eff * 250 * y * Math.pow(1 + ind, y)) });
+            }
+            const output = Math.round(eff * 250 * years);
+            const multiplier = (output / (8 * 250 * years)).toFixed(1);
+            document.getElementById('prOut').textContent = output.toLocaleString();
+            document.getElementById('prDW').textContent = Math.round(dwYear).toLocaleString() + 'h';
+            document.getElementById('prMul').textContent = '×' + multiplier;
+            document.getElementById('pr5y').textContent = Math.round(eff * 250 * 5).toLocaleString();
+            QAQCharts.lineChart(document.getElementById('prChart'), data, { height: 320 });
+            const tlHtml = [1, 3, 5, 10].filter(y => y <= years).map(y => '<div class="timeline-item"><div class="timeline-year">Y' + y + '</div><div class="timeline-text">~' + Math.round(eff * 250 * y).toLocaleString() + ' output units</div></div>').join('');
+            document.getElementById('prTimeline').innerHTML = tlHtml;
+            document.getElementById('prDash').classList.add('show');
+            document.getElementById('prDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

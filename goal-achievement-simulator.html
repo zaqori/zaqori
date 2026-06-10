@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Achievement Simulator - Time to Your Goal | ZAQORI</title>
+    <meta name="description" content="See when you'll reach your goal. The Goal Achievement Simulator projects your timeline based on current pace and consistency.">
+    <link rel="canonical" href="https://zaqori.com/simulators/goal-achievement-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>🏆 Goal Achievement Simulator</h1>
+                <p class="sim-intro">When will you actually reach your goal? The Goal Achievement Simulator projects your timeline based on current pace, consistency, and pace improvements.</p>
+
+                <form id="gaForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Current progress (%)</label><input type="number" id="gaCur" value="0" min="0" max="100"></div>
+                        <div class="form-row"><label>Goal size (1-10)</label><input type="number" id="gaGoal" value="10" min="1" max="100"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Daily effort (units)</label><input type="number" id="gaEff" value="1" min="0.1" step="any"></div>
+                        <div class="form-row"><label>Consistency (%)</label><input type="number" id="gaCons" value="80" min="1" max="100"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Calculate Goal Timeline →</button>
+                </form>
+
+                <div class="dashboard" id="gaDash">
+                    <div class="dashboard-header">
+                        <h3>Your Goal Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Goal Achievement Simulator', 'My goal projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Days to Goal</div><div class="stat-value" id="gaDays">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Goal Date</div><div class="stat-value" id="gaDate">—</div></div>
+                        <div class="result-item"><div class="stat-label">Consistent Days Needed</div><div class="stat-value" id="gaCD">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Total Effort</div><div class="stat-value" id="gaTot">0</div></div>
+                    </div>
+                    <div class="chart-container" id="gaChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Progress Markers</div><div class="timeline-items" id="gaTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Goal Achievement Simulator?</h2>
+                    <p>The Goal Achievement Simulator answers a deceptively simple question: when will you reach your goal? Most people set goals — financial, fitness, learning, career — without a realistic sense of how long they should take. This tool models the timeline based on your current pace, consistency, and the goal's size.</p>
+                    <p>It also helps you see the leverage of small improvements. Doubling your daily effort halves your timeline. Going from 80% to 95% consistency cuts your timeline by 20%. These compounding gains make goals dramatically more achievable.</p>
+
+                    <h3>Goal Math</h3>
+                    <p>The simple formula for time to goal:</p>
+                    <div class="formula-box">Days to Goal = (Goal − Current) ÷ (Daily Effort × Consistency Rate)</div>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Estimate your current progress as a percentage.</li>
+                        <li>Rate the goal's size relative to similar goals (1=very small, 10=large, 100=lifetime goal).</li>
+                        <li>Enter your daily effort in whatever units make sense for the goal.</li>
+                        <li>Set your consistency rate (the percentage of days you'll actually put in effort).</li>
+                        <li>Click "Calculate Goal Timeline" to see your projected date and progress chart.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Goal Achievement</h2>
+                    <p>Goals without timelines are wishes. The simulator forces specificity: how much progress per day, how consistent, how big is the goal. That specificity makes goals achievable.</p>
+                    <p>It also shows that most goals are within reach. The numbers often turn out to be much more reasonable than expected. A goal that feels "impossible" sometimes needs just 30 minutes a day for 18 months.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>How do I estimate current progress?</h4><p>Be honest. Most people over-estimate progress. If you've done 20% of the work, say 20%. The simulation is more accurate with realistic inputs.</p></div>
+                    <div class="faq-item"><h4>What if my effort varies?</h4><p>Use an average. The simulator assumes consistent daily effort, so use your best estimate of what you'll do on a typical day.</p></div>
+                    <div class="faq-item"><h4>Can I include setbacks?</h4><p>The consistency rate captures average missed days. If you have major planned setbacks (a few weeks off), subtract them from the timeline manually.</p></div>
+                    <div class="faq-item"><h4>What about motivation loss?</h4><p>Realistic goal timelines help with motivation. A 5-year goal that breaks down to "30 minutes a day" is much less intimidating than an abstract "5 years from now."</p></div>
+                    <div class="faq-item"><h4>How often should I revisit the goal?</h4><p>Monthly. Re-estimate your progress, adjust the timeline, and recommit. Goals are living targets, not set-and-forget.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — build the consistency.</li>
+                        <li><a href="time-value-simulator.html">Time Value Simulator</a> — quantify the cost of waiting.</li>
+                        <li><a href="decision-outcome-simulator.html">Decision Outcome Simulator</a> — compare paths.</li>
+                        <li><a href="life-progress-timeline-simulator.html">Life Progress Timeline</a> — full life view.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Goal Simulators</h3><ul class="sidebar-list">
+                    <li><a href="goal-achievement-simulator.html">Goal Achievement</a></li>
+                    <li><a href="habit-builder-simulator.html">Habit Builder</a></li>
+                    <li><a href="time-value-simulator.html">Time Value</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('gaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const cur = +document.getElementById('gaCur').value;
+            const goal = +document.getElementById('gaGoal').value;
+            const eff = +document.getElementById('gaEff').value;
+            const cons = +document.getElementById('gaCons').value / 100;
+            const remaining = (goal - cur) * 10;
+            const dailyProd = eff * cons;
+            const days = Math.ceil(remaining / dailyProd);
+            const totalEff = Math.round(days * dailyProd);
+            const date = new Date();
+            date.setDate(date.getDate() + days);
+            const data = [];
+            const maxYears = Math.min(20, Math.ceil(days / 365) + 1);
+            for (let y = 0; y <= maxYears; y++) {
+                const progress = cur + (goal - cur) * Math.min(1, (y * 365 * dailyProd) / remaining);
+                data.push({ label: 'Y' + y, value: Math.round(progress) });
+            }
+            document.getElementById('gaDays').textContent = days.toLocaleString();
+            document.getElementById('gaDate').textContent = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            document.getElementById('gaCD').textContent = Math.ceil(days * cons).toLocaleString();
+            document.getElementById('gaTot').textContent = totalEff.toLocaleString() + ' units';
+            QAQCharts.lineChart(document.getElementById('gaChart'), data, { height: 320 });
+            const milestones = [25, 50, 75, 100];
+            const tlHtml = milestones.map(p => {
+                const d = Math.ceil(((goal - cur) * p/100) * 10 / dailyProd);
+                const dt = new Date(); dt.setDate(dt.getDate() + d);
+                return '<div class="timeline-item"><div class="timeline-year">' + p + '%</div><div class="timeline-text">' + dt.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) + '</div></div>';
+            }).join('');
+            document.getElementById('gaTimeline').innerHTML = tlHtml;
+            document.getElementById('gaDash').classList.add('show');
+            document.getElementById('gaDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

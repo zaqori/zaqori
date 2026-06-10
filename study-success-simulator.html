@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Success Simulator - Knowledge Accumulation | ZAQORI</title>
+    <meta name="description" content="Project your academic and learning success. The Study Success Simulator shows what consistent study time delivers in grades, knowledge, and mastery.">
+    <link rel="canonical" href="https://zaqori.com/simulators/study-success-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>🎓 Study Success Simulator</h1>
+                <p class="sim-intro">See what consistent study time really delivers. Project your academic performance, knowledge accumulation, and expertise development over months and years.</p>
+
+                <form id="ssForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Daily study hours</label><input type="number" id="ssHrs" value="2" min="0.5" max="12" step="0.5"></div>
+                        <div class="form-row"><label>Current GPA / Performance (0-100)</label><input type="number" id="ssCur" value="75" min="0" max="100"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Focus quality (1-10)</label><input type="number" id="ssFoc" value="7" min="1" max="10"></div>
+                        <div class="form-row"><label>Years to project</label><input type="number" id="ssYears" value="4" min="1" max="10"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Simulate My Studies →</button>
+                </form>
+
+                <div class="dashboard" id="ssDash">
+                    <div class="dashboard-header">
+                        <h3>Your Study Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Study Success Simulator', 'My study projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Final Performance</div><div class="stat-value" id="ssFin">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Total Study Hours</div><div class="stat-value" id="ssTot">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Knowledge Score</div><div class="stat-value" id="ssKn">0%</div></div>
+                        <div class="stat-card"><div class="stat-label">Improvement</div><div class="stat-value" id="ssImp">+0%</div></div>
+                    </div>
+                    <div class="chart-container" id="ssChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Learning Milestones</div><div class="timeline-items" id="ssTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Study Success Simulator?</h2>
+                    <p>The Study Success Simulator models the academic and learning outcomes of consistent study habits. It answers a simple but important question: what does your current study routine actually lead to? Whether you're a high school student preparing for college, a university student aiming for graduate school, or a professional learning new skills, this tool projects your trajectory.</p>
+                    <p>It captures two realities: focused study time matters more than total hours, and consistent small efforts compound into major expertise over time.</p>
+
+                    <h3>How Focused Study Compounds</h3>
+                    <p>Research shows focused study is 2-4× more effective than passive review. The simulator accounts for both duration and focus quality. The formula approximates learning:</p>
+                    <div class="formula-box">Knowledge(t) = Knowledge₀ + k × Focus × log(1 + Study Hours)</div>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your daily study hours and current performance level.</li>
+                        <li>Rate your focus quality (1-10) honestly — most people overrate this.</li>
+                        <li>Set the time horizon and click "Simulate My Studies."</li>
+                        <li>Run scenarios with different focus ratings to see how much deep work matters.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Study Success</h2>
+                    <p>Many students study many hours but see modest results because their focus is fragmented. The simulator makes the value of deep work visible. It also shows that small, consistent study sessions (90 minutes a day) outperform erratic 6-hour cram sessions.</p>
+                    <p>For professionals learning new skills, the simulator projects your expertise development. Whether you're learning to code, a new language, or a technical domain, the same compound curve applies.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>Is more study always better?</h4><p>Up to a point, yes. Beyond 4-5 hours of deep focus per day, returns diminish significantly. Quality matters more than quantity. The simulator reflects this.</p></div>
+                    <div class="faq-item"><h4>What counts as focused study?</h4><p>Focused study means distraction-free, active engagement with the material. Phone in another room, no notifications, no multitasking. 60 minutes of this beats 3 hours of distracted reading.</p></div>
+                    <div class="faq-item"><h4>How long to see improvement?</h4><p>Noticeable improvement comes within weeks. Substantial expertise takes months to years. The simulator projects the full curve so you can set realistic expectations.</p></div>
+                    <div class="faq-item"><h4>What if I'm preparing for a specific test?</h4><p>Set the time horizon to the test date and run the simulation. If your projected performance is below your target, increase study hours or focus quality.</p></div>
+                    <div class="faq-item"><h4>Does this work for non-academic learning?</h4><p>Yes. The same principles apply to learning languages, instruments, programming, and most skill-based domains. The "performance" metric maps to whatever you're trying to achieve.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="reading-progress-simulator.html">Reading Progress Simulator</a> — model your reading habit.</li>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — build consistency.</li>
+                        <li><a href="learning-projection-simulator.html">Learning Projection Simulator</a> — skills in 5 years.</li>
+                        <li><a href="productivity-growth-simulator.html">Productivity Growth Simulator</a> — work output.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Growth Simulators</h3><ul class="sidebar-list">
+                    <li><a href="study-success-simulator.html">Study Success</a></li>
+                    <li><a href="habit-builder-simulator.html">Habit Builder</a></li>
+                    <li><a href="reading-progress-simulator.html">Reading Progress</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('ssForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const hrs = +document.getElementById('ssHrs').value;
+            const cur = +document.getElementById('ssCur').value;
+            const foc = +document.getElementById('ssFoc').value;
+            const years = +document.getElementById('ssYears').value;
+            const effHrs = hrs * (foc / 10);
+            const totalHrs = effHrs * 365 * years;
+            const finalPerf = Math.min(100, Math.round(cur + (100 - cur) * 0.5 * Math.log10(1 + totalHrs / 100)));
+            const data = [];
+            for (let y = 0; y <= years; y++) {
+                const hours = effHrs * 365 * y;
+                const perf = Math.min(100, Math.round(cur + (100 - cur) * 0.5 * Math.log10(1 + hours / 100)));
+                data.push({ label: 'Y' + y, value: perf });
+            }
+            const knowledge = Math.min(100, Math.round((totalHrs / 5000) * 100));
+            document.getElementById('ssFin').textContent = finalPerf;
+            document.getElementById('ssTot').textContent = Math.round(totalHrs).toLocaleString() + 'h';
+            document.getElementById('ssKn').textContent = knowledge + '%';
+            document.getElementById('ssImp').textContent = '+' + (finalPerf - cur) + '%';
+            QAQCharts.lineChart(document.getElementById('ssChart'), data, { height: 320 });
+            const tlHtml = [0.25, 1, 2, 4].filter(y => y <= years).map(y => '<div class="timeline-item"><div class="timeline-year">Y' + y + '</div><div class="timeline-text">Performance: ' + data[Math.min(Math.round(y), data.length-1)].value + '/100</div></div>').join('');
+            document.getElementById('ssTimeline').innerHTML = tlHtml;
+            document.getElementById('ssDash').classList.add('show');
+            document.getElementById('ssDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

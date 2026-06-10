@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Wealth Simulator - Project Your Net Worth | ZAQORI</title>
+    <meta name="description" content="See where today's savings and investments will take you. The Future Wealth Simulator projects your net worth over 1, 5, 10, and 30 years with interactive charts.">
+    <meta name="keywords" content="future wealth, net worth projection, wealth simulator, financial future">
+    <link rel="canonical" href="https://zaqori.com/simulators/future-wealth-simulator.html">
+    <meta property="og:title" content="Future Wealth Simulator - See Where Your Money Goes">
+    <meta property="og:description" content="Project your total net worth over time with our interactive future wealth simulator.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>💰 Future Wealth Simulator</h1>
+                <p class="sim-intro">Discover what your current financial path actually leads to. Enter your current wealth, savings rate, and expected returns — and see your net worth at age 35, 45, 55, and 65.</p>
+
+                <form id="wealthForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Current age</label><input type="number" id="wAge" value="30" min="18" max="80"></div>
+                        <div class="form-row"><label>Target age</label><input type="number" id="wTarget" value="65" min="20" max="90"></div>
+                    </div>
+                    <div class="form-row"><label>Current net worth ($)</label><input type="number" id="wCurrent" value="25000" min="0"></div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Monthly savings ($)</label><input type="number" id="wMonthly" value="800" min="0"></div>
+                        <div class="form-row"><label>Annual return (%)</label><input type="number" id="wReturn" value="7" step="any"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Annual income growth (%)</label><input type="number" id="wGrowth" value="3" step="any"></div>
+                        <div class="form-row"><label>Inflation rate (%)</label><input type="number" id="wInflation" value="2.5" step="any"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Simulate My Wealth →</button>
+                </form>
+
+                <div class="dashboard" id="wealthDash">
+                    <div class="dashboard-header">
+                        <h3>Your Wealth Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Future Wealth Simulator', 'Check out my wealth projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Final Net Worth</div><div class="stat-value" id="wFinal">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Total Saved</div><div class="stat-value" id="wSaved">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Investment Growth</div><div class="stat-value" id="wGrowth2">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">In Today's Dollars</div><div class="stat-value" id="wReal">$0</div></div>
+                    </div>
+                    <div class="chart-container" id="wChart"></div>
+                    <div class="timeline">
+                        <div class="timeline-title">📅 Decade Milestones</div>
+                        <div class="timeline-items" id="wTimeline"></div>
+                    </div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Future Wealth Simulator?</h2>
+                    <p>The Future Wealth Simulator is a tool designed to show you exactly what your current financial trajectory leads to. Most people think they're "saving" but never see the cumulative result. This simulator closes that gap by projecting your net worth year-by-year, decade-by-decade, until your target age.</p>
+                    <p>Using a compound growth model with realistic assumptions, it accounts for monthly contributions, expected investment returns, income growth, and inflation. The output is a clear, visual representation of where you are headed if nothing changes — and a powerful motivator for what becomes possible if you do change.</p>
+
+                    <h3>How the Math Works</h3>
+                    <p>The core formula is the standard compound interest equation with periodic contributions:</p>
+                    <div class="formula-box">Future Value = P × (1 + r)^n + PMT × [((1 + r)^n − 1) / r]</div>
+                    <p>Where P is your starting net worth, r is your monthly expected return (annual ÷ 12), n is the number of months, and PMT is your monthly contribution. We also model income growth by scaling your monthly contributions upward at the rate you specify, and adjust the final figure for inflation so you can see real purchasing power.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your current age and the age you want to project to (typically retirement age).</li>
+                        <li>Add your current net worth — total assets minus total debts.</li>
+                        <li>Set your monthly savings amount and expected annual return on investments.</li>
+                        <li>Optionally, add income growth (raises, promotions) and an inflation rate.</li>
+                        <li>Click "Simulate My Wealth" to see your full projection, decade milestones, and today's-dollar value.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Your Wealth Future</h2>
+                    <p>When you see your projected net worth at age 65 laid out as a chart, the abstract idea of "saving for retirement" becomes concrete. A chart showing $1.2M at 65 hits differently than a vague plan to "save more." It also reveals the brutal cost of waiting: a 25-year-old who starts saving $200/month will end up with roughly twice as much as a 35-year-old saving $400/month, despite contributing the same total dollars.</p>
+                    <p>The simulator helps you answer questions like: Should I increase my 401(k) contribution? Is it worth working one extra year? What does starting a side hustle do to my trajectory? Run multiple scenarios and compare.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>What return rate should I assume?</h4><p>For a diversified stock portfolio, 7% nominal (5% real after inflation) is a reasonable long-term assumption. Bond-heavy portfolios should use 3–4%. Be conservative — under-promising beats over-promising.</p></div>
+                    <div class="faq-item"><h4>Does this include taxes?</h4><p>No, this is a pre-tax projection. If your contributions are in a 401(k) or IRA, the tax treatment actually helps long-term growth. If they're in a taxable account, drag from taxes could reduce returns by 0.5–1% annually.</p></div>
+                    <div class="faq-item"><h4>How accurate is the income growth assumption?</h4><p>Real income growth varies widely by industry, role, and economic conditions. 2–4% is a safe long-term average for most white-collar careers. Adjust based on your field.</p></div>
+                    <div class="faq-item"><h4>What if I have variable income?</h4><p>Use a 3–5 year average of your savings rate. The model assumes consistency, but real life has ups and downs. The projection is a baseline — actual results will vary around it.</p></div>
+                    <div class="faq-item"><h4>Can I model a one-time windfall?</h4><p>The current simulator doesn't have a windfall field, but you can incorporate it by adding it to your current net worth. For periodic windfalls, average them into your monthly contribution.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <p>ZAQORI offers other simulators to round out your financial future planning:</p>
+                    <ul>
+                        <li><a href="investment-growth-simulator.html">Investment Growth Simulator</a> — see how individual investments compound.</li>
+                        <li><a href="savings-growth-simulator.html">Savings Growth Simulator</a> — model pure savings with no market risk.</li>
+                        <li><a href="retirement-projection-simulator.html">Retirement Projection Simulator</a> — answer the specific question: am I on track?</li>
+                        <li><a href="debt-payoff-simulator.html">Debt Payoff Simulator</a> — see how debt impacts the wealth equation.</li>
+                        <li><a href="career-growth-simulator.html">Career Growth Simulator</a> — model your earnings over a full career.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box">
+                    <h3>Wealth Simulators</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="future-wealth-simulator.html">Future Wealth</a></li>
+                        <li><a href="investment-growth-simulator.html">Investment Growth</a></li>
+                        <li><a href="savings-growth-simulator.html">Savings Growth</a></li>
+                        <li><a href="debt-payoff-simulator.html">Debt Payoff</a></li>
+                        <li><a href="retirement-projection-simulator.html">Retirement</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-box">
+                    <h3>Life Simulators</h3>
+                    <ul class="sidebar-list">
+                        <li><a href="career-growth-simulator.html">Career Growth</a></li>
+                        <li><a href="habit-builder-simulator.html">Habit Builder</a></li>
+                        <li><a href="life-progress-timeline-simulator.html">Life Timeline</a></li>
+                    </ul>
+                </div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('wealthForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const age = +document.getElementById('wAge').value;
+            const target = +document.getElementById('wTarget').value;
+            const P = +document.getElementById('wCurrent').value;
+            const PMT = +document.getElementById('wMonthly').value;
+            const ret = +document.getElementById('wReturn').value / 100;
+            const g = +document.getElementById('wGrowth').value / 100;
+            const infl = +document.getElementById('wInflation').value / 100;
+            const years = target - age;
+            if (years <= 0) { alert('Target age must be greater than current age.'); return; }
+            const data = [];
+            let bal = P, contrib = P, monthlySav = PMT, yrIdx = 0;
+            for (let y = 0; y <= years; y++) {
+                const ageNow = age + y;
+                const totalContrib = P + (PMT * 12 * (1 + (g/2))) * y;
+                data.push({ label: 'Age ' + ageNow, value: Math.round(bal) });
+                if (y === years) break;
+                for (let m = 0; m < 12; m++) {
+                    bal = bal * (1 + ret/12) + monthlySav;
+                }
+                contrib = totalContrib;
+                monthlySav *= (1 + g);
+            }
+            const final = bal;
+            const totalSaved = P + (PMT * 12 * (1 + g/2)) * years;
+            const growth = final - totalSaved;
+            const realFinal = final / Math.pow(1 + infl, years);
+            const fmt = v => '$' + Math.round(v).toLocaleString();
+            document.getElementById('wFinal').textContent = fmt(final);
+            document.getElementById('wSaved').textContent = fmt(totalSaved);
+            document.getElementById('wGrowth2').textContent = fmt(growth);
+            document.getElementById('wReal').textContent = fmt(realFinal);
+            QAQCharts.lineChart(document.getElementById('wChart'), data, { format: 'currency', height: 320 });
+            const tlHtml = [10, 20, 30, 40].filter(d => d < years).map(d => {
+                const v = data[Math.min(d, data.length-1)].value;
+                return '<div class="timeline-item"><div class="timeline-year">+' + d + 'y</div><div class="timeline-text">Age ' + (age + d) + ': ' + fmt(v) + '</div></div>';
+            }).join('');
+            document.getElementById('wTimeline').innerHTML = tlHtml;
+            document.getElementById('wealthDash').classList.add('show');
+            document.getElementById('wealthDash').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    </script>
+</body>
+</html>

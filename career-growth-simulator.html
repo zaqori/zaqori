@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Growth Simulator - Earnings Over Time | ZAQORI</title>
+    <meta name="description" content="Project your earnings across a full career. The Career Growth Simulator models salary growth, promotions, and lifetime income.">
+    <link rel="canonical" href="https://zaqori.com/simulators/career-growth-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>💼 Career Growth Simulator</h1>
+                <p class="sim-intro">See your lifetime earnings and career trajectory. The Career Growth Simulator models salary growth, promotions, raises, and total career income over decades.</p>
+
+                <form id="cgForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Current salary ($)</label><input type="number" id="cgSal" value="65000" min="0"></div>
+                        <div class="form-row"><label>Annual raise (%)</label><input type="number" id="cgRaise" value="3" step="any"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Promotion frequency (years)</label><input type="number" id="cgProm" value="4" min="1" max="20"></div>
+                        <div class="form-row"><label>Promotion raise (%)</label><input type="number" id="cgPromP" value="15" step="any"></div>
+                    </div>
+                    <div class="form-row"><label>Years to project (career remaining)</label><input type="number" id="cgYears" value="35" min="1" max="50"></div>
+                    <button type="submit" class="btn btn-primary btn-large">Project My Career →</button>
+                </form>
+
+                <div class="dashboard" id="cgDash">
+                    <div class="dashboard-header">
+                        <h3>Your Career Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Career Growth Simulator', 'My career projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Lifetime Earnings</div><div class="stat-value" id="cgLife">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Peak Salary</div><div class="stat-value" id="cgPeak">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Final Salary</div><div class="stat-value" id="cgFinal">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Promotions</div><div class="stat-value" id="cgN">0</div></div>
+                    </div>
+                    <div class="chart-container" id="cgChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Career Milestones</div><div class="timeline-items" id="cgTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Career Growth Simulator?</h2>
+                    <p>The Career Growth Simulator projects your lifetime earnings and salary trajectory based on your current compensation and expected growth pattern. Most people underestimate their lifetime income — and the cumulative impact of raises, promotions, and career changes.</p>
+                    <p>This tool helps you see the long-term financial implications of career decisions: stay in the current role vs. switch, pursue an advanced degree vs. start working, take a salary cut for fulfillment vs. maximize earnings.</p>
+
+                    <h3>The Career Math</h3>
+                    <p>Salary compounds with raises and jumps with promotions:</p>
+                    <div class="formula-box">Salary(y) = Salary₀ × (1 + Raise)^y + Sum of Promotion Jumps</div>
+                    <p>Lifetime earnings is the sum of all annual salaries. The simulator projects both.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your current salary and expected annual raise percentage.</li>
+                        <li>Set your promotion frequency and the typical raise at each promotion.</li>
+                        <li>Choose the time horizon (typically years until retirement).</li>
+                        <li>Click "Project My Career" to see your salary trajectory and lifetime income.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Career Growth</h2>
+                    <p>Most career advice focuses on the next step — the next role, the next raise. This simulator zooms out to the full arc. It shows that the cumulative effect of consistent raises and periodic promotions produces a much larger lifetime income than most people realize.</p>
+                    <p>It's also useful for comparing paths. Run scenarios: stay in current role, switch jobs, pursue an MBA, freelance, start a business. The different lifetime earnings are concrete, not vague.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>What raise should I expect?</h4><p>3-5% is typical for inflation-matching raises. Job switches often produce 10-20% jumps. Promotions typically deliver 10-25% depending on level. Industry matters: tech and finance have higher growth than education or non-profits.</p></div>
+                    <div class="faq-item"><h4>How often do real promotions happen?</h4><p>It varies by company and level. Entry-level: 2-3 years. Mid-career: 3-5 years. Senior: 4-7 years. Executive: 5-10 years. The simulator uses your input to model your specific situation.</p></div>
+                    <div class="faq-item"><h4>What if I switch careers?</h4><p>Run the simulator with the new career's starting salary and growth pattern. The cumulative impact of switches over a 30-40 year career is significant.</p></div>
+                    <div class="faq-item"><h4>Does this include taxes?</h4><p>No, this is gross salary. To estimate net, apply your effective tax rate (typically 20-30% for middle-class earners).</p></div>
+                    <div class="faq-item"><h4>What about inflation?</h4><p>The result is in nominal dollars. To see real purchasing power, divide by (1 + inflation)^years. Most planners assume 2-3% long-term inflation.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="future-wealth-simulator.html">Future Wealth Simulator</a> — total picture.</li>
+                        <li><a href="productivity-growth-simulator.html">Productivity Growth Simulator</a> — work output.</li>
+                        <li><a href="life-progress-timeline-simulator.html">Life Progress Timeline</a> — full life arc.</li>
+                        <li><a href="decision-outcome-simulator.html">Decision Outcome Simulator</a> — compare paths.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Career Simulators</h3><ul class="sidebar-list">
+                    <li><a href="career-growth-simulator.html">Career Growth</a></li>
+                    <li><a href="productivity-growth-simulator.html">Productivity Growth</a></li>
+                    <li><a href="life-progress-timeline-simulator.html">Life Timeline</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('cgForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const sal = +document.getElementById('cgSal').value;
+            const raise = +document.getElementById('cgRaise').value / 100;
+            const promEvery = +document.getElementById('cgProm').value;
+            const promRaise = +document.getElementById('cgPromP').value / 100;
+            const years = +document.getElementById('cgYears').value;
+            const data = [];
+            let totalEarn = 0, current = sal, peak = sal, promos = 0;
+            for (let y = 0; y <= years; y++) {
+                data.push({ label: 'Y' + y, value: Math.round(current) });
+                if (y < years) {
+                    totalEarn += current;
+                    current = current * (1 + raise);
+                    if ((y + 1) % promEvery === 0 && y > 0) {
+                        current = current * (1 + promRaise);
+                        promos++;
+                    }
+                    if (current > peak) peak = current;
+                }
+            }
+            const fmt = v => '$' + Math.round(v).toLocaleString();
+            document.getElementById('cgLife').textContent = fmt(totalEarn);
+            document.getElementById('cgPeak').textContent = fmt(peak);
+            document.getElementById('cgFinal').textContent = fmt(current);
+            document.getElementById('cgN').textContent = promos;
+            QAQCharts.lineChart(document.getElementById('cgChart'), data, { format: 'currency', height: 320 });
+            const milestones = [5, 10, 15, 20, 25].filter(y => y <= years);
+            const tlHtml = milestones.map(y => '<div class="timeline-item"><div class="timeline-year">Y' + y + '</div><div class="timeline-text">Salary: ' + fmt(data[y].value) + '</div></div>').join('');
+            document.getElementById('cgTimeline').innerHTML = tlHtml;
+            document.getElementById('cgDash').classList.add('show');
+            document.getElementById('cgDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

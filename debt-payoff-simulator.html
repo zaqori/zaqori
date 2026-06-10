@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Payoff Simulator - Be Debt-Free Sooner | ZAQORI</title>
+    <meta name="description" content="See when you'll be debt-free. The Debt Payoff Simulator projects your debt-free date with extra payments, comparing snowball vs. avalanche strategies.">
+    <link rel="canonical" href="https://zaqori.com/simulators/debt-payoff-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>💳 Debt Payoff Simulator</h1>
+                <p class="sim-intro">See exactly when you'll be debt-free. Compare strategies, model extra payments, and visualize the freedom that comes with a zero balance.</p>
+
+                <form id="dbtForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Total debt balance ($)</label><input type="number" id="dBal" value="15000" min="0"></div>
+                        <div class="form-row"><label>Average interest rate (%)</label><input type="number" id="dRate" value="18" step="any"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Monthly payment ($)</label><input type="number" id="dPay" value="400" min="0"></div>
+                        <div class="form-row"><label>Extra monthly payment ($)</label><input type="number" id="dExtra" value="100" min="0"></div>
+                    </div>
+                    <div class="form-row"><label>Payoff strategy</label>
+                        <select id="dStrat">
+                            <option value="avalanche">Avalanche (highest interest first)</option>
+                            <option value="snowball">Snowball (smallest balance first)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Plan My Payoff →</button>
+                </form>
+
+                <div class="dashboard" id="dbtDash">
+                    <div class="dashboard-header">
+                        <h3>Your Debt-Free Plan</h3>
+                        <button class="share-btn" onclick="shareResults('Debt Payoff Simulator', 'My debt-free plan on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Months to Debt-Free</div><div class="stat-value" id="dMonths">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Total Paid</div><div class="stat-value" id="dTotal">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Total Interest</div><div class="stat-value" id="dInt">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Debt-Free Date</div><div class="stat-value" id="dDate">—</div></div>
+                    </div>
+                    <div class="chart-container" id="dChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Payoff Milestones</div><div class="timeline-items" id="dTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Debt Payoff Simulator?</h2>
+                    <p>The Debt Payoff Simulator takes the mystery out of getting out of debt. Most people with credit card debt, student loans, or personal loans have a vague sense that they're "paying it down" but no clear picture of when the balance hits zero. This tool gives you that picture — and shows you how much faster you can be free with extra payments.</p>
+                    <p>It also helps you choose between the two most popular payoff strategies: the avalanche method (highest interest first, mathematically optimal) and the snowball method (smallest balance first, psychologically motivating). The math is clear; only you can decide which one you'll stick with.</p>
+
+                    <h3>The Payoff Math</h3>
+                    <p>Each month, interest accrues on the remaining balance, then your payment is applied:</p>
+                    <div class="formula-box">New Balance = (Balance × (1 + r/12)) − Payment</div>
+                    <p>This iterates until the balance reaches zero. With extra payments, the principal drops faster, interest compounds on a smaller base, and the timeline shortens dramatically. Even $50/month extra can cut years off a multi-year payoff.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter the total of your current debt balances and the average interest rate.</li>
+                        <li>Add your planned monthly payment and any extra you'll commit each month.</li>
+                        <li>Choose your strategy: Avalanche (saves more interest) or Snowball (faster psychological wins).</li>
+                        <li>Click "Plan My Payoff" to see your debt-free date, total cost, and a chart of your balance over time.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Your Payoff</h2>
+                    <p>Debt feels abstract until you see the balance curve. A chart that drops from $15,000 to $0 over 36 months turns "I should pay off my cards" into a concrete, achievable goal. It also reveals the true cost of minimum payments — and how much of your money is going to interest instead of principal.</p>
+                    <p>Run scenarios: "What if I add $200/month extra?" "What if I transfer to a 0% card for 18 months?" The simulator helps you find the path that fits your budget and motivation style.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>Avalanche vs snowball — which is better?</h4><p>Avalanche saves the most money mathematically. Snowball provides faster psychological wins by eliminating small debts first. Research suggests people who use the snowball method are more likely to stick with it. The "right" answer is whichever you'll execute.</p></div>
+                    <div class="faq-item"><h4>What if my payment is less than monthly interest?</h4><p>Your balance will grow indefinitely. Increase the payment or reduce the rate (balance transfer, consolidation) to make progress. The simulator will show this with a balance that never reaches zero.</p></div>
+                    <div class="faq-item"><h4>Should I consolidate multiple debts?</h4><p>If you can get a lower rate or a fixed payoff date, consolidation helps. The simulator assumes a single combined balance; for multiple debts at different rates, results are a reasonable approximation.</p></div>
+                    <div class="faq-item"><h4>How does this handle balance transfer offers?</h4><p>Run two scenarios: one with your current rate to the payoff date, and one with a 0% rate for the promo period. The difference in total interest paid shows the value of the offer.</p></div>
+                    <div class="faq-item"><h4>What if I miss a payment?</h4><p>The simulator assumes consistent payments. Missed payments add fees, hurt your credit, and extend the timeline. If you've missed payments, restart the simulator with your new actual balance and add a buffer.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="future-wealth-simulator.html">Future Wealth Simulator</a> — see what wealth looks like after debt.</li>
+                        <li><a href="savings-growth-simulator.html">Savings Growth Simulator</a> — start the emergency fund.</li>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — build the consistency that pays off debt.</li>
+                        <li><a href="decision-outcome-simulator.html">Decision Outcome Simulator</a> — compare debt payoff vs. investing.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Finance Simulators</h3><ul class="sidebar-list">
+                    <li><a href="future-wealth-simulator.html">Future Wealth</a></li>
+                    <li><a href="debt-payoff-simulator.html">Debt Payoff</a></li>
+                    <li><a href="savings-growth-simulator.html">Savings Growth</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('dbtForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let bal = +document.getElementById('dBal').value;
+            const r = +document.getElementById('dRate').value / 100 / 12;
+            const pay = +document.getElementById('dPay').value;
+            const extra = +document.getElementById('dExtra').value;
+            const total = pay + extra;
+            const data = [{ label: 'M0', value: Math.round(bal) }];
+            let months = 0, totalPaid = 0, totalInt = 0;
+            const maxMonths = 600;
+            while (bal > 0 && months < maxMonths) {
+                const interest = bal * r;
+                if (total <= interest && months > 0) {
+                    document.getElementById('dMonths').textContent = 'Never (payment too low)';
+                    document.getElementById('dDate').textContent = 'Never';
+                    document.getElementById('dInt').textContent = '$' + Math.round(totalInt).toLocaleString();
+                    QAQCharts.lineChart(document.getElementById('dChart'), data, { format: 'currency' });
+                    document.getElementById('dbtDash').classList.add('show');
+                    return;
+                }
+                let principalPay = total - interest;
+                if (principalPay > bal) principalPay = bal;
+                bal -= principalPay;
+                totalPaid += total;
+                totalInt += interest;
+                months++;
+                if (months % Math.max(1, Math.floor(months/12) + 1) === 0 || bal <= 0) {
+                    data.push({ label: 'M' + months, value: Math.max(0, Math.round(bal)) });
+                }
+            }
+            const fmt = v => '$' + Math.round(v).toLocaleString();
+            const date = new Date();
+            date.setMonth(date.getMonth() + months);
+            document.getElementById('dMonths').textContent = months;
+            document.getElementById('dTotal').textContent = fmt(totalPaid);
+            document.getElementById('dInt').textContent = fmt(totalInt);
+            document.getElementById('dDate').textContent = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+            QAQCharts.lineChart(document.getElementById('dChart'), data, { format: 'currency', height: 320 });
+            const milestones = [6, 12, 18, 24, 36, 48].filter(m => m < months);
+            const tlHtml = milestones.map(m => '<div class="timeline-item"><div class="timeline-year">M' + m + '</div><div class="timeline-text">' + fmt(Math.max(0, data[Math.min(m, data.length-1)].value)) + ' remaining</div></div>').join('') +
+            '<div class="timeline-item" style="border-left-color:var(--success);"><div class="timeline-year">FREE!</div><div class="timeline-text">Debt-free in ' + date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' }) + '</div></div>';
+            document.getElementById('dTimeline').innerHTML = tlHtml;
+            document.getElementById('dbtDash').classList.add('show');
+            document.getElementById('dbtDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

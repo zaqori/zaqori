@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Projection Simulator - Skills in 5 Years | ZAQORI</title>
+    <meta name="description" content="See what consistent learning delivers. The Learning Projection Simulator shows your skill development and expertise in 1, 3, or 5 years.">
+    <link rel="canonical" href="https://zaqori.com/simulators/learning-projection-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>🧠 Learning Projection Simulator</h1>
+                <p class="sim-intro">See what consistent learning delivers in skills, expertise, and career capital. The Learning Projection Simulator shows your trajectory from novice to expert.</p>
+
+                <form id="lpForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Current skill level (1-10)</label><input type="number" id="lpCur" value="3" min="1" max="10"></div>
+                        <div class="form-row"><label>Daily practice (hours)</label><input type="number" id="lpHrs" value="1" min="0.25" max="8" step="0.25"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Field complexity (1-10)</label><input type="number" id="lpCpx" value="7" min="1" max="10"></div>
+                        <div class="form-row"><label>Years to project</label><input type="number" id="lpYears" value="5" min="1" max="20"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Project My Learning →</button>
+                </form>
+
+                <div class="dashboard" id="lpDash">
+                    <div class="dashboard-header">
+                        <h3>Your Learning Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Learning Projection Simulator', 'My learning projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Final Skill Level</div><div class="stat-value" id="lpFin">0/10</div></div>
+                        <div class="stat-card"><div class="stat-label">Practice Hours</div><div class="stat-value" id="lpHrs2">0h</div></div>
+                        <div class="stat-card"><div class="stat-label">Mastery Status</div><div class="stat-value" id="lpMas">Beginner</div></div>
+                        <div class="stat-card"><div class="stat-label">Improvement</div><div class="stat-value" id="lpImp">+0</div></div>
+                    </div>
+                    <div class="chart-container" id="lpChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Skill Milestones</div><div class="timeline-items" id="lpTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Learning Projection Simulator?</h2>
+                    <p>The Learning Projection Simulator models skill development in any domain. Whether you're learning a language, an instrument, a programming framework, or a professional skill, the underlying curve of competence follows a predictable shape: rapid initial gains, then slower but steady improvement, then plateaus that can be broken with deliberate practice.</p>
+                    <p>This tool helps you see what consistent practice delivers over months and years. It also helps you see the difference between shallow and deep practice — the simulator's quality input captures the difference between learning to play songs and learning to play music.</p>
+
+                    <h3>The Skill Acquisition Curve</h3>
+                    <p>Skill develops logarithmically with practice hours:</p>
+                    <div class="formula-box">Skill = Initial + Plateau × (1 − e^(−Practice Hours / Time Constant))</div>
+                    <p>Field complexity affects the time constant: simple skills plateau quickly, complex ones take years to approach mastery.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Rate your current skill level (1=novice, 10=expert) for the field you want to model.</li>
+                        <li>Enter your daily practice hours.</li>
+                        <li>Set the field complexity (low for simple skills, high for complex ones like programming or music).</li>
+                        <li>Click "Project My Learning" to see your skill trajectory and milestones.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Learning</h2>
+                    <p>Most learners underestimate the time required to reach proficiency. The simulator shows that even with daily practice, complex skills take years to approach mastery. This sets realistic expectations and prevents the discouragement that comes from expecting too much too soon.</p>
+                    <p>It also helps with deliberate practice. The fastest gains come from focused, challenging practice with feedback — not from passive repetition. The simulator's quality input captures this difference.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>What is deliberate practice?</h4><p>Deliberate practice is focused, challenging, feedback-rich practice. It feels hard because you're working at the edge of your ability. It's the kind of practice that produces the fastest skill gains.</p></div>
+                    <div class="faq-item"><h4>How long to become "good"?</h4><p>It depends on the field. Cooking: 100 hours. Conversational language: 500 hours. Programming: 1,000 hours. Mastery of complex skills: 10,000+ hours. The simulator helps you see where you are on each curve.</p></div>
+                    <div class="faq-item"><h4>Should I focus on one skill or many?</h4><p>For deep expertise, focus on one. For breadth, rotate. The simulator helps you compare scenarios.</p></div>
+                    <div class="faq-item"><h4>What if I plateau?</h4><p>Plateaus are normal and indicate you're approaching your current ability ceiling. The way through: more challenging practice, better feedback, or new approaches. The simulator shows you when to expect plateaus.</p></div>
+                    <div class="faq-item"><h4>Does talent matter?</h4><p>Starting ability and learning rate are partly genetic, but research shows deliberate practice accounts for the majority of long-term skill differences. Show up consistently and the talent question answers itself.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — build the practice habit.</li>
+                        <li><a href="reading-progress-simulator.html">Reading Progress Simulator</a> — model your reading.</li>
+                        <li><a href="study-success-simulator.html">Study Success Simulator</a> — academic learning.</li>
+                        <li><a href="productivity-growth-simulator.html">Productivity Growth Simulator</a> — apply skills at work.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Learning Simulators</h3><ul class="sidebar-list">
+                    <li><a href="learning-projection-simulator.html">Learning Projection</a></li>
+                    <li><a href="habit-builder-simulator.html">Habit Builder</a></li>
+                    <li><a href="study-success-simulator.html">Study Success</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('lpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const cur = +document.getElementById('lpCur').value;
+            const hrs = +document.getElementById('lpHrs').value;
+            const cpx = +document.getElementById('lpCpx').value;
+            const years = +document.getElementById('lpYears').value;
+            const totalHrs = hrs * 365 * years;
+            const timeConst = 500 * cpx;
+            const plateau = 10;
+            const final = Math.min(10, +(cur + (plateau - cur) * (1 - Math.exp(-totalHrs / timeConst))).toFixed(1));
+            const data = [];
+            for (let y = 0; y <= years; y++) {
+                const h = hrs * 365 * y;
+                const skill = Math.min(10, cur + (plateau - cur) * (1 - Math.exp(-h / timeConst)));
+                data.push({ label: 'Y' + y, value: +skill.toFixed(1) });
+            }
+            let mastery = 'Beginner';
+            if (final >= 8) mastery = 'Master';
+            else if (final >= 6) mastery = 'Advanced';
+            else if (final >= 4) mastery = 'Competent';
+            else if (final >= 2) mastery = 'Intermediate';
+            document.getElementById('lpFin').textContent = final + '/10';
+            document.getElementById('lpHrs2').textContent = Math.round(totalHrs).toLocaleString() + 'h';
+            document.getElementById('lpMas').textContent = mastery;
+            document.getElementById('lpImp').textContent = '+' + (final - cur).toFixed(1);
+            QAQCharts.lineChart(document.getElementById('lpChart'), data, { height: 320 });
+            const tlHtml = [1, 2, 3, 5].filter(y => y <= years).map(y => '<div class="timeline-item"><div class="timeline-year">Y' + y + '</div><div class="timeline-text">Skill: ' + data[Math.min(y, data.length-1)].value + '/10</div></div>').join('');
+            document.getElementById('lpTimeline').innerHTML = tlHtml;
+            document.getElementById('lpDash').classList.add('show');
+            document.getElementById('lpDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

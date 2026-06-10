@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Value Simulator - What Is Your Time Worth? | ZAQORI</title>
+    <meta name="description" content="See the dollar value of every hour. The Time Value Simulator quantifies what your time is really worth and how spending it differently changes your life.">
+    <link rel="canonical" href="https://zaqori.com/simulators/time-value-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>⏰ Time Value Simulator</h1>
+                <p class="sim-intro">What is your time actually worth? See the dollar value of every hour, and how spending time on different activities changes your wealth, health, and life over time.</p>
+
+                <form id="tvForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Annual income ($)</label><input type="number" id="tvInc" value="75000" min="0"></div>
+                        <div class="form-row"><label>Working hours per year</label><input type="number" id="tvHrs" value="2000" min="500" max="3500"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Hours per activity per week</label><input type="number" id="tvAct" value="10" min="0" max="100"></div>
+                        <div class="form-row"><label>Years to project</label><input type="number" id="tvYears" value="10" min="1" max="40"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Calculate Time Value →</button>
+                </form>
+
+                <div class="dashboard" id="tvDash">
+                    <div class="dashboard-header">
+                        <h3>Your Time Value</h3>
+                        <button class="share-btn" onclick="shareResults('Time Value Simulator', 'My time value on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Hourly Value</div><div class="stat-value" id="tvHr">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Daily Value</div><div class="stat-value" id="tvDay">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">Yearly Value</div><div class="stat-value" id="tvYr">$0</div></div>
+                        <div class="stat-card"><div class="stat-label">10-Year Activity Cost</div><div class="stat-value" id="tv10">$0</div></div>
+                    </div>
+                    <div class="chart-container" id="tvChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Cumulative Activity Cost</div><div class="timeline-items" id="tvTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Time Value Simulator?</h2>
+                    <p>The Time Value Simulator helps you put a dollar figure on your time, then shows what your recurring activities actually cost. Most people think of "saving money" as the only path to wealth, but they overlook that time is the most valuable resource they have. Once you see the dollar value of your hours, spending decisions become much clearer.</p>
+                    <p>It's also a powerful tool for life decisions. Should you take a longer commute to save on rent? Should you pay someone to clean your house? Should you hire a virtual assistant? These become easy when you can compare the dollar value of your time to the cost of the service.</p>
+
+                    <h3>How Time Value Is Calculated</h3>
+                    <p>The basic formula:</p>
+                    <div class="formula-box">Hourly Value = Annual Income ÷ Working Hours per Year</div>
+                    <p>To get true hourly value, you can also add the value of leisure time and uncompensated work. Most planners use 1.5-2× the working-hour value to capture full economic value.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your annual income and total working hours per year.</li>
+                        <li>Set hours per week for a specific activity you want to evaluate.</li>
+                        <li>Choose the time horizon and click "Calculate Time Value."</li>
+                        <li>Run scenarios for different activities to compare their cost.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Time Value</h2>
+                    <p>Once you see that your leisure time is worth $40/hour, decisions like "should I pay $20 to have groceries delivered" become obvious. Decisions like "should I take a job that adds 2 hours of commute per day" become clearly negative. The math stops being abstract.</p>
+                    <p>It's also useful for self-reflection. If you spend 10 hours a week on social media, and your time is worth $50/hour, that's $26,000 per year of your life invested in scrolling. The Time Value Simulator makes that real.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>What about uncompensated time?</h4><p>Sleep, family time, and hobbies have value but don't generate income. You can value these at whatever rate feels right — many people use the same hourly rate as work for simplicity.</p></div>
+                    <div class="faq-item"><h4>How do I include taxes?</h4><p>Use after-tax income in the calculation. Effective tax rate is usually 20-30% for middle-class earners in the US.</p></div>
+                    <div class="faq-item"><h4>What if I work variable hours?</h4><p>Use an average. Estimate the total income and total hours, then divide.</p></div>
+                    <div class="faq-item"><h4>Should I use this for hiring decisions?</h4><p>Yes. If your time is worth $50/hour and you can hire a cleaner for $25/hour, you come out ahead financially (and reduce stress). If the service costs $75/hour, you lose money.</p></div>
+                    <div class="faq-item"><h4>Is time value the same for everyone?</h4><p>No. It varies by income, life stage, and personal preferences. A parent might value their time differently than a single professional. Use the calculator as a starting point and adjust.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="social-media-cost-simulator.html">Social Media Cost Simulator</a> — what distraction costs.</li>
+                        <li><a href="future-wealth-simulator.html">Future Wealth Simulator</a> — total wealth picture.</li>
+                        <li><a href="productivity-growth-simulator.html">Productivity Growth Simulator</a> — work output.</li>
+                        <li><a href="decision-outcome-simulator.html">Decision Outcome Simulator</a> — compare paths.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Life Simulators</h3><ul class="sidebar-list">
+                    <li><a href="time-value-simulator.html">Time Value</a></li>
+                    <li><a href="social-media-cost-simulator.html">Social Media Cost</a></li>
+                    <li><a href="decision-outcome-simulator.html">Decision Outcome</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('tvForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const inc = +document.getElementById('tvInc').value;
+            const hrs = +document.getElementById('tvHrs').value;
+            const act = +document.getElementById('tvAct').value;
+            const years = +document.getElementById('tvYears').value;
+            const hrVal = inc / hrs;
+            const dayVal = hrVal * 8;
+            const yrVal = hrVal * hrs;
+            const cost10 = act * 52 * years * hrVal;
+            const data = [];
+            for (let y = 0; y <= years; y++) {
+                data.push({ label: 'Y' + y, value: Math.round(act * 52 * y * hrVal) });
+            }
+            const fmt = v => '$' + Math.round(v).toLocaleString();
+            document.getElementById('tvHr').textContent = fmt(hrVal);
+            document.getElementById('tvDay').textContent = fmt(dayVal);
+            document.getElementById('tvYr').textContent = fmt(yrVal);
+            document.getElementById('tv10').textContent = fmt(cost10);
+            QAQCharts.lineChart(document.getElementById('tvChart'), data, { format: 'currency', height: 320 });
+            const tlHtml = [1, 3, 5, 10].filter(y => y <= years).map(y => '<div class="timeline-item"><div class="timeline-year">Y' + y + '</div><div class="timeline-text">' + fmt(act * 52 * y * hrVal) + ' of time</div></div>').join('');
+            document.getElementById('tvTimeline').innerHTML = tlHtml;
+            document.getElementById('tvDash').classList.add('show');
+            document.getElementById('tvDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

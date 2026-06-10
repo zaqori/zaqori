@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Progress Simulator - Books Per Year | ZAQORI</title>
+    <meta name="description" content="See how many books you'll read in your lifetime. The Reading Progress Simulator projects your total reading based on daily habits.">
+    <link rel="canonical" href="https://zaqori.com/simulators/reading-progress-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>📚 Reading Progress Simulator</h1>
+                <p class="sim-intro">How many books will you read in your lifetime? See your reading trajectory based on your daily reading habit — and the surprising long-term impact of small daily commitment.</p>
+
+                <form id="rdForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Current age</label><input type="number" id="rdAge" value="30" min="5" max="100"></div>
+                        <div class="form-row"><label>Pages per day</label><input type="number" id="rdPg" value="20" min="1" max="200"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Average book length (pages)</label><input type="number" id="rdLen" value="300" min="50" max="1500"></div>
+                        <div class="form-row"><label>Reading days per week</label><input type="number" id="rdDays" value="7" min="1" max="7"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Simulate My Reading →</button>
+                </form>
+
+                <div class="dashboard" id="rdDash">
+                    <div class="dashboard-header">
+                        <h3>Your Reading Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Reading Progress Simulator', 'My reading projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Books per Year</div><div class="stat-value" id="rdYr">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Books to Age 80</div><div class="stat-value" id="rd80">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Knowledge Index</div><div class="stat-value" id="rdKn">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Reading Speed</div><div class="stat-value" id="rdSp">0 p/d</div></div>
+                    </div>
+                    <div class="chart-container" id="rdChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Lifetime Milestones</div><div class="timeline-items" id="rdTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Reading Progress Simulator?</h2>
+                    <p>The Reading Progress Simulator projects how many books you'll read in your lifetime based on your current daily reading habit. It's one of the most striking simulations on ZAQORI because the difference between 5 pages a day and 30 pages a day — both feel small — produces dramatically different lives.</p>
+                    <p>The average American reads about 4 books per year. A consistent 20-pages-a-day reader finishes 24 books per year. Over a lifetime from age 30 to 80, that's 1,200 books. The mind of someone who has read 1,200 books is fundamentally different from someone who has read 100.</p>
+
+                    <h3>The Reading Math</h3>
+                    <p>The math is straightforward:</p>
+                    <div class="formula-box">Books per Year = (Pages per Day × Reading Days per Week × 52) ÷ Book Length</div>
+                    <p>Multiplied by the years you have left, you get a lifetime reading count. The simulator shows this with a chart and concrete lifetime projections.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter your current age and how many pages you read (or plan to read) daily.</li>
+                        <li>Set the average book length you typically read.</li>
+                        <li>Choose how many days per week you'll read consistently.</li>
+                        <li>Click "Simulate My Reading" to see your books-per-year, lifetime count, and timeline.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Your Reading Future</h2>
+                    <p>20 pages a day feels like a small commitment. The simulator shows that it's actually the entry ticket to becoming a serious reader. The chart of cumulative books over a lifetime is genuinely inspiring — it's a visual representation of accumulated knowledge and perspective.</p>
+                    <p>It also helps you see what "reading 50 books a year" really requires: about 40 pages a day with a 300-page average. Not heroic, but consistent.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>How many books does the average person read?</h4><p>About 4 per year in the US, 12-15 in some European countries. The simulator helps you see what happens when you go well above average — even 20 books per year puts you in the top 5% of readers.</p></div>
+                    <div class="faq-item"><h4>Is 20 pages a day realistic?</h4><p>20 pages takes about 30-40 minutes for most readers. Many people can fit this in: 20 minutes before bed, 10 minutes at lunch, 10 minutes on the commute. It's a small commitment with a massive lifetime payoff.</p></div>
+                    <div class="faq-item"><h4>What if I miss days?</h4><p>The simulator uses reading days per week, so missing days is built into the model. You can also lower the consistency to model real-life variance.</p></div>
+                    <div class="faq-item"><h4>Audiobooks count?</h4><p>Yes! Audiobooks count toward your reading total. The simulator doesn't differentiate — it's a measure of content consumed, not the medium.</p></div>
+                    <div class="faq-item"><h4>What about reading speed?</h4><p>Average reading speed is 200-300 words per minute. Faster readers cover more pages in the same time. The simulator assumes average speed; adjust your pages-per-day based on your actual capacity.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — build consistency.</li>
+                        <li><a href="study-success-simulator.html">Study Success Simulator</a> — formal learning.</li>
+                        <li><a href="learning-projection-simulator.html">Learning Projection Simulator</a> — skills in 5 years.</li>
+                        <li><a href="productivity-growth-simulator.html">Productivity Growth Simulator</a> — work output.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Growth Simulators</h3><ul class="sidebar-list">
+                    <li><a href="reading-progress-simulator.html">Reading Progress</a></li>
+                    <li><a href="habit-builder-simulator.html">Habit Builder</a></li>
+                    <li><a href="study-success-simulator.html">Study Success</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('rdForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const age = +document.getElementById('rdAge').value;
+            const pg = +document.getElementById('rdPg').value;
+            const len = +document.getElementById('rdLen').value;
+            const days = +document.getElementById('rdDays').value;
+            const years = Math.max(0, 80 - age);
+            const booksPerYear = Math.round((pg * days * 52) / len);
+            const booksTo80 = booksPerYear * years;
+            const data = [];
+            for (let y = 0; y <= years; y++) data.push({ label: 'Age ' + (age + y), value: booksPerYear * y });
+            const knowledge = Math.min(100, Math.round((booksTo80 / 500) * 100));
+            document.getElementById('rdYr').textContent = booksPerYear;
+            document.getElementById('rd80').textContent = booksTo80.toLocaleString();
+            document.getElementById('rdKn').textContent = knowledge + '%';
+            document.getElementById('rdSp').textContent = pg + ' p/d';
+            QAQCharts.lineChart(document.getElementById('rdChart'), data, { height: 320 });
+            const tlHtml = [
+                { age: 40, label: 'Age 40' },
+                { age: 50, label: 'Age 50' },
+                { age: 65, label: 'Age 65' },
+                { age: 80, label: 'Age 80' }
+            ].filter(m => m.age > age).map(m => '<div class="timeline-item"><div class="timeline-year">' + m.label + '</div><div class="timeline-text">' + (booksPerYear * (m.age - age)).toLocaleString() + ' books read</div></div>').join('');
+            document.getElementById('rdTimeline').innerHTML = tlHtml;
+            document.getElementById('rdDash').classList.add('show');
+            document.getElementById('rdDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

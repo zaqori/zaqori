@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Builder Simulator - See Consistency Compound | ZAQORI</title>
+    <meta name="description" content="See how daily habits compound over time. The Habit Builder Simulator projects your consistency streak and the surprising long-term impact of small daily actions.">
+    <link rel="canonical" href="https://zaqori.com/simulators/habit-builder-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>🎯 Habit Builder Simulator</h1>
+                <p class="sim-intro">See how daily habits compound over time. The Habit Builder Simulator projects your consistency streak and shows the long-term impact of small daily actions.</p>
+
+                <form id="hbForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Daily time investment (minutes)</label><input type="number" id="hbMin" value="20" min="1" max="240"></div>
+                        <div class="form-row"><label>Current streak (days)</label><input type="number" id="hbCur" value="0" min="0"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Consistency rate (%)</label><input type="number" id="hbRate" value="80" min="1" max="100"></div>
+                        <div class="form-row"><label>Years to project</label><input type="number" id="hbYears" value="3" min="1" max="20"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Build My Habit Future →</button>
+                </form>
+
+                <div class="dashboard" id="hbDash">
+                    <div class="dashboard-header">
+                        <h3>Your Habit Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Habit Builder Simulator', 'My habit projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Total Practice</div><div class="stat-value" id="hbTotal">0h</div></div>
+                        <div class="stat-card"><div class="stat-label">Successful Days</div><div class="stat-value" id="hbDays">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Skill Level (Years)</div><div class="stat-value" id="hbSkill">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Mastery Progress</div><div class="stat-value" id="hbMas">0%</div></div>
+                    </div>
+                    <div class="chart-container" id="hbChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Milestones</div><div class="timeline-items" id="hbTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Habit Builder Simulator?</h2>
+                    <p>The Habit Builder Simulator models the long-term impact of consistent daily practice. The "10,000 hour rule" popularized the idea that mastery comes from accumulated practice, but the more interesting insight is the curve of improvement: rapid gains in the early months, slower but meaningful gains for years after.</p>
+                    <p>This tool helps you see what consistency actually delivers. By simulating thousands of days of practice, you get a realistic projection of skill level, expertise, and where you'll be in 1, 3, or 10 years if you keep showing up.</p>
+
+                    <h3>The Compound Effect of Habits</h3>
+                    <p>Daily practice compounds logarithmically. The formula approximates skill acquisition:</p>
+                    <div class="formula-box">Skill(t) = Skill₀ + k × log(1 + t)</div>
+                    <p>Where t is total hours of practice, k is a learning rate constant, and Skill₀ is your starting point. After ~10,000 hours, most people reach a high level of competence in a complex skill.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Enter how much time you'll spend on the habit each day.</li>
+                        <li>Set your current streak and consistency rate (the percentage of days you'll actually do it).</li>
+                        <li>Choose a time horizon and click "Build My Habit Future."</li>
+                        <li>Run multiple scenarios with different consistency rates to see what each delivers.</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Habit Building</h2>
+                    <p>Most people underestimate the long-term impact of small daily actions. A 20-minute daily practice that feels like nothing produces 121 hours of practice per year, 1,217 hours in a decade. That's real expertise. The simulator shows this in concrete terms.</p>
+                    <p>It also helps with motivation. When you're tired and don't feel like doing the thing, seeing the curve of where you'll be in 5 years if you keep going — and where you'll be if you don't — can be the difference between showing up and skipping.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>Is the 10,000-hour rule real?</h4><p>It's an oversimplification. Research shows that expertise requires extensive deliberate practice, but quality matters as much as quantity. The 10,000 number is roughly correct for complex skills like music or chess, less so for simpler ones.</p></div>
+                    <div class="faq-item"><h4>What if I miss days?</h4><p>The simulator accounts for consistency rate. Missing 20% of days is built into the model. The key is keeping your consistency rate as high as possible — even 80% delivers meaningful results.</p></div>
+                    <div class="faq-item"><h4>How fast do I improve?</h4><p>The biggest gains come in the first 6-12 months. After that, improvement continues but at a slower rate. The simulator captures this logarithmic curve.</p></div>
+                    <div class="faq-item"><h4>What about deliberate practice vs. casual practice?</h4><p>Deliberate practice — focused, with feedback — produces faster gains than casual repetition. The simulator assumes a moderate level of deliberate practice.</p></div>
+                    <div class="faq-item"><h4>Which habits give the biggest return?</h4><p>Compound habits: reading, exercise, meditation, writing, language practice, programming, music. These all benefit from daily practice and produce cumulative skill.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="reading-progress-simulator.html">Reading Progress Simulator</a> — model your reading habit.</li>
+                        <li><a href="study-success-simulator.html">Study Success Simulator</a> — academic learning.</li>
+                        <li><a href="fitness-progress-simulator.html">Fitness Progress Simulator</a> — physical training.</li>
+                        <li><a href="productivity-growth-simulator.html">Productivity Growth Simulator</a> — work output.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Growth Simulators</h3><ul class="sidebar-list">
+                    <li><a href="habit-builder-simulator.html">Habit Builder</a></li>
+                    <li><a href="reading-progress-simulator.html">Reading Progress</a></li>
+                    <li><a href="study-success-simulator.html">Study Success</a></li>
+                    <li><a href="productivity-growth-simulator.html">Productivity Growth</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('hbForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const min = +document.getElementById('hbMin').value;
+            const cur = +document.getElementById('hbCur').value;
+            const rate = +document.getElementById('hbRate').value / 100;
+            const years = +document.getElementById('hbYears').value;
+            const totalDays = years * 365;
+            const successfulDays = Math.round(totalDays * rate);
+            const totalHours = Math.round(successfulDays * min / 60);
+            const skillYears = (totalHours / 1000).toFixed(1);
+            const mastery = Math.min(100, Math.round((totalHours / 10000) * 100));
+            const data = [];
+            let cumHours = 0;
+            for (let y = 0; y <= years; y++) {
+                cumHours = y * 365 * rate * min / 60;
+                data.push({ label: 'Y' + y, value: Math.round(cumHours) });
+            }
+            document.getElementById('hbTotal').textContent = totalHours.toLocaleString() + 'h';
+            document.getElementById('hbDays').textContent = successfulDays.toLocaleString();
+            document.getElementById('hbSkill').textContent = skillYears;
+            document.getElementById('hbMas').textContent = mastery + '%';
+            QAQCharts.lineChart(document.getElementById('hbChart'), data, { height: 320 });
+            const milestones = [
+                { y: 0.25, label: '~90 days' },
+                { y: 1, label: '1 year' },
+                { y: 3, label: '3 years' },
+                { y: 5, label: '5 years' }
+            ].filter(m => m.y <= years);
+            const tlHtml = milestones.map(m => {
+                const h = m.y * 365 * rate * min / 60;
+                return '<div class="timeline-item"><div class="timeline-year">' + m.label + '</div><div class="timeline-text">' + Math.round(h).toLocaleString() + ' hours practiced</div></div>';
+            }).join('');
+            document.getElementById('hbTimeline').innerHTML = tlHtml;
+            document.getElementById('hbDash').classList.add('show');
+            document.getElementById('hbDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

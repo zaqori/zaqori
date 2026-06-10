@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Progress Simulator - Strength Over Time | ZAQORI</title>
+    <meta name="description" content="See your strength and endurance gains over months and years. Project your fitness progress from consistent training.">
+    <link rel="canonical" href="https://zaqori.com/simulators/fitness-progress-simulator.html">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8548563022480099"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../simulators/future-wealth-simulator.html" class="active">Simulators</a></li>
+                <li><a href="../blog/the-hidden-cost-of-social-media.html">Blog</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions"><button class="theme-toggle"><span class="theme-icon">🌙</span></button></div>
+        </div>
+    </header>
+
+    <div class="sim-page">
+        <div class="sim-grid">
+            <main class="sim-main">
+                <h1>💪 Fitness Progress Simulator</h1>
+                <p class="sim-intro">See the strength, endurance, and body composition gains from consistent training. Project your fitness trajectory over months and years.</p>
+
+                <form id="fitForm" class="form-grid">
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Current fitness level</label>
+                            <select id="fLevel">
+                                <option value="beginner">Beginner (0-6 months)</option>
+                                <option value="intermediate" selected>Intermediate (6-24 months)</option>
+                                <option value="advanced">Advanced (2+ years)</option>
+                            </select>
+                        </div>
+                        <div class="form-row"><label>Training days per week</label><input type="number" id="fDays" value="4" min="1" max="7"></div>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-row"><label>Training type</label>
+                            <select id="fType">
+                                <option value="strength" selected>Strength training</option>
+                                <option value="endurance">Endurance / cardio</option>
+                                <option value="mixed">Mixed (both)</option>
+                            </select>
+                        </div>
+                        <div class="form-row"><label>Years to project</label><input type="number" id="fYears" value="2" min="1" max="10"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-large">Simulate My Fitness →</button>
+                </form>
+
+                <div class="dashboard" id="fitDash">
+                    <div class="dashboard-header">
+                        <h3>Your Fitness Trajectory</h3>
+                        <button class="share-btn" onclick="shareResults('Fitness Progress Simulator', 'My fitness projection on ZAQORI!')">📤 Share</button>
+                    </div>
+                    <div class="stat-grid">
+                        <div class="stat-card"><div class="stat-label">Strength Gain</div><div class="stat-value" id="fStr">+0%</div></div>
+                        <div class="stat-card"><div class="stat-label">Endurance Gain</div><div class="stat-value" id="fEnd">+0%</div></div>
+                        <div class="stat-card"><div class="stat-label">Sessions/Year</div><div class="stat-value" id="fSess">0</div></div>
+                        <div class="stat-card"><div class="stat-label">Plateau Risk</label></div><div class="stat-value" id="fPlat">Low</div></div>
+                    </div>
+                    <div class="chart-container" id="fChart"></div>
+                    <div class="timeline"><div class="timeline-title">📅 Milestone Markers</div><div class="timeline-items" id="fTimeline"></div></div>
+                </div>
+
+                <section class="content-section">
+                    <h2>What is the Fitness Progress Simulator?</h2>
+                    <p>The Fitness Progress Simulator models the strength, endurance, and body composition gains from consistent training. It applies the well-documented principles of progressive overload and periodization, showing you exactly what consistent training delivers over months and years.</p>
+                    <p>Beginners gain fast — often 25-100% strength increase in the first year. Intermediates gain more slowly. Advanced lifters gain only a few percent per year, focusing on technique and small improvements. The simulator captures these different curves.</p>
+
+                    <h3>How Strength Gains Work</h3>
+                    <p>Strength gains follow a logarithmic curve. The formula approximates the rate of improvement based on training experience:</p>
+                    <div class="formula-box">Strength(t) = Strength₀ × (1 + rate)^(t/12)</div>
+                    <p>Where rate is the monthly gain rate (beginners: ~5%, intermediate: ~2%, advanced: ~0.5%) and t is time in months. Endurance gains follow a similar curve but with different rates.</p>
+
+                    <h2>How to Use This Simulator</h2>
+                    <ol>
+                        <li>Select your current training experience level.</li>
+                        <li>Enter how many days per week you train consistently.</li>
+                        <li>Choose your training type — strength, endurance, or mixed.</li>
+                        <li>Set the time horizon and click "Simulate My Fitness."</li>
+                    </ol>
+
+                    <h2>Benefits of Visualizing Your Fitness Future</h2>
+                    <p>Beginners often quit because initial gains plateau. The simulator shows that the plateau is a transition to a slower-but-still-meaningful phase. Advanced athletes can see whether they should specialize or add variety to keep making progress.</p>
+                    <p>It also helps set realistic expectations. Marketing shows dramatic 90-day transformations; the simulator shows the more honest, sustainable progression. Real fitness is a multi-year project, and that's exactly what this tool models.</p>
+
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="faq-item"><h4>How fast should I expect to gain strength?</h4><p>Beginners can add 50-100 lbs to their squat in year one. Intermediates add 20-30 lbs per year. Advanced lifters might add 5-10 lbs per year. The simulator reflects these rates.</p></div>
+                    <div class="faq-item"><h4>What about muscle growth?</h4><p>Beginners can gain 10-15 kg of muscle in their first year. Intermediates gain 2-4 kg per year. Advanced lifters gain less than 1 kg per year. The simulator uses these research-based rates.</p></div>
+                    <div class="faq-item"><h4>What if I miss training days?</h4><p>Consistency is the key input. The simulator assumes you complete your planned sessions. Real life has interruptions, so actual progress will be slightly slower than the projection.</p></div>
+                    <div class="faq-item"><h4>Do I need to take rest weeks?</h4><p>Yes. Deload weeks every 4-8 weeks help recovery and prevent overtraining. The simulator assumes you include them in your training schedule.</p></div>
+                    <div class="faq-item"><h4>What if I'm already advanced?</h4><p>Advanced lifters see smaller gains but can still progress with periodization, technique refinement, and strategic specialization. The simulator captures the slower curve accurately.</p></div>
+
+                    <h2>Related Simulators</h2>
+                    <ul>
+                        <li><a href="future-weight-simulator.html">Future Weight Simulator</a> — see your weight trajectory.</li>
+                        <li><a href="calorie-impact-simulator.html">Calorie Impact Simulator</a> — model dietary changes.</li>
+                        <li><a href="sleep-impact-simulator.html">Sleep Impact Simulator</a> — sleep affects recovery.</li>
+                        <li><a href="habit-builder-simulator.html">Habit Builder Simulator</a> — build consistency.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-box"><h3>Health Simulators</h3><ul class="sidebar-list">
+                    <li><a href="fitness-progress-simulator.html">Fitness Progress</a></li>
+                    <li><a href="calorie-impact-simulator.html">Calorie Impact</a></li>
+                    <li><a href="sleep-impact-simulator.html">Sleep Impact</a></li>
+                    <li><a href="future-weight-simulator.html">Future Weight</a></li>
+                </ul></div>
+                <div class="ad-slot">Advertisement</div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div><a href="../index.html" class="brand"><span class="brand-logo">Z</span><span>ZAQORI</span></a><p class="footer-brand">See where today's choices lead tomorrow.</p></div>
+            <div class="footer-col"><h4>Simulators</h4><ul><li><a href="future-wealth-simulator.html">Future Wealth</a></li><li><a href="fitness-progress-simulator.html">Fitness Progress</a></li><li><a href="reading-progress-simulator.html">Reading Progress</a></li><li><a href="career-growth-simulator.html">Career Growth</a></li></ul></div>
+            <div class="footer-col"><h4>Blog</h4><ul><li><a href="../blog/the-hidden-cost-of-social-media.html">Productivity</a></li><li><a href="../blog/what-happens-if-you-save-10-dollars-every-day.html">Wealth Building</a></li><li><a href="../blog/why-small-habits-create-massive-results.html">Habits</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="../pages/about.html">About</a></li><li><a href="../pages/contact.html">Contact</a></li><li><a href="../pages/privacy.html">Privacy</a></li><li><a href="../pages/terms.html">Terms</a></li></ul></div>
+            <div class="footer-col"><h4>Explore</h4><ul><li><a href="../categories/productivity.html">Categories</a></li><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../pages/disclaimer.html">Disclaimer</a></li></ul></div>
+        
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:zaqori.official@gmail.com">zaqori.official@gmail.com</a></li>
+                    <li><a href="mailto:zaqori.support@gmail.com">zaqori.support@gmail.com</a></li>
+                    <li><a href="../pages/contact.html">Contact Form</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ZAQORI. All rights reserved. <a href="mailto:zaqori.official@gmail.com" style="color:inherit;text-decoration:underline;">zaqori.official@gmail.com</a></p>
+        </div>
+    </footer>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/charts.js"></script>
+    <script>
+        document.getElementById('fitForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const level = document.getElementById('fLevel').value;
+            const days = +document.getElementById('fDays').value;
+            const type = document.getElementById('fType').value;
+            const years = +document.getElementById('fYears').value;
+            const rates = { beginner: 5, intermediate: 2, advanced: 0.5 };
+            const monthlyRate = rates[level] / 100;
+            const data = [];
+            let strength = 100;
+            let endurance = 100;
+            for (let m = 0; m <= years * 12; m++) {
+                if (m > 0) {
+                    strength *= (1 + monthlyRate / 12);
+                    endurance *= (1 + (monthlyRate * 0.8) / 12);
+                }
+                if (m % 6 === 0) data.push({ label: 'Y' + (m/12), value: Math.round(strength) });
+            }
+            const strengthGain = strength - 100;
+            const enduranceGain = endurance - 100;
+            const sessions = days * 52 * years;
+            const plateau = level === 'advanced' ? 'High' : level === 'intermediate' ? 'Moderate' : 'Low';
+            document.getElementById('fStr').textContent = '+' + strengthGain.toFixed(0) + '%';
+            document.getElementById('fEnd').textContent = '+' + enduranceGain.toFixed(0) + '%';
+            document.getElementById('fSess').textContent = sessions.toLocaleString();
+            document.getElementById('fPlat').textContent = plateau;
+            QAQCharts.lineChart(document.getElementById('fChart'), data, { height: 320 });
+            const tlHtml = [3, 6, 12, 24].filter(m => m <= years*12).map(m => '<div class="timeline-item"><div class="timeline-year">M' + m + '</div><div class="timeline-text">~' + Math.round(100 * Math.pow(1 + monthlyRate/12, m)) + '% of starting strength</div></div>').join('');
+            document.getElementById('fTimeline').innerHTML = tlHtml;
+            document.getElementById('fitDash').classList.add('show');
+            document.getElementById('fitDash').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

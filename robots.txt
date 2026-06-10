@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /js/
+Disallow: /css/
+
+# Sitemaps
+Sitemap: https://zaqori.com/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
